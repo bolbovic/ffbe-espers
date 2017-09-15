@@ -5,23 +5,23 @@ import { observer } from 'mobx-react'
 const getFill = (box) => {
   const { hover, pathed, selected } = box;
   const reward = box.infos && box.infos.reward ? box.infos.reward[0] : '';
-  let color = 'white', alpha = '.1';
+  let color = 'white', alpha = '.3';
 
   if ( hover || pathed ) {
-    alpha = '.75';
+    alpha = '1';
   } else if ( selected ) {
-    alpha = '.50';
+    alpha = '.8';
   }
 
   switch ( reward ) {
-    case 'ATK': color = `255, 0, 0`; break;
-    case 'DEF': color = '255, 165, 0'; break;
-    case 'MAG': color = '128, 0, 128'; break;
-    case 'SPR': color = '0, 0, 255'; break;
-    case 'MP': color = '0, 128, 0'; break;
-    case 'HP': color = '255, 255, 0'; break;
-    case 'ABILITY': color = '255, 0, 255'; break;
-    case 'MAGIC': color = '0, 255, 255'; break;
+    case 'ATK': color = `230, 102, 101`; break;
+    case 'DEF': color = '205, 180, 140'; break;
+    case 'MAG': color = '146, 149, 202'; break;
+    case 'SPR': color = '9, 107, 182'; break;
+    case 'MP': color = '158, 206, 182'; break;
+    case 'HP': color = '255, 214, 3'; break;
+    case 'ABILITY': color = '173, 113, 175'; break;
+    case 'MAGIC': color = '172, 203, 232'; break;
     default: color = '255, 255, 255';
   }
   return `rgba(${color}, ${alpha})`;
