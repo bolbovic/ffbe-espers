@@ -12,8 +12,19 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
+    "@blueprintjs/core": "^1.27.0",
+    "@blueprintjs/labs": "^0.8.0",
+    "classnames": "^2.2.5",
+    "counterpart": "^0.18.2",
+    "dotenv": "^4.0.0",
+    "firebase": "^4.3.1",
+    "mobx": "^3.2.2",
+    "mobx-react": "^4.2.2",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-addons-css-transition-group": "^15.6.0",
+    "react-dom": "^15.6.1",
+    "react-hex": "^0.4.1",
+    "react-router-dom": "^4.2.2"
   },
   "devDependencies": {
     "nwb": "0.15.x"
