@@ -3,11 +3,11 @@ import { action, observable } from 'mobx';
 
 import Store from './Store'
 
+import '../i18n/de-DE'
 import '../i18n/en-US'
 import '../i18n/es-ES'
 import '../i18n/fr-FR'
 import '../i18n/ko-KR'
-import '../i18n/pt-BR'
 import '../i18n/zh-CN'
 
 export const LANG_EN_US = 'en-US';
