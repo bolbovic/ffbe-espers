@@ -4,3 +4,6 @@
 npm-debug.log*
 .env
 yarn.lock
+/data
+/public/data
+/tmp

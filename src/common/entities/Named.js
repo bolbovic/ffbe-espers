@@ -11,6 +11,6 @@ export default class Named {
   }
 
   @computed get name() {
-    return this.names[Stores.lang.langIdx] || '';
+    return this.names[Stores.lang.langShort] || this.names.jp || '';
   }
 }

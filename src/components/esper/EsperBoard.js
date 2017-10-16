@@ -13,7 +13,7 @@ const SIZE = 50;
 const getParent = ( node, board ) => {
   let r = null;
   board.forEach( n => {
-    if ( `${node.infos.parent_node_id}` === n.id ) {
+    if ( `${node.infos.parentId}` === n.id ) {
       r = n;
     }
   })
@@ -44,6 +44,7 @@ class EsperBoard extends React.Component {
   getBox = id => {
     let box = undefined;
     this.board.forEach( b => {
+      //console.log(b.id, id);
       if ( b.id === id ) {
         box = b;
       }
@@ -52,21 +53,16 @@ class EsperBoard extends React.Component {
   }
 
   getChildren = id => {
-    let boxes = [];
-    this.board.forEach( b => {
-      if ( `${b.infos.parent_node_id}` === id ) {
-        boxes.push( b );
-      }
-    })
-    return boxes;
+    console.log(this.getBox(id), id);
+    return this.getBox(id).infos.children.map( c => this.getBox(c) );
   }
 
   getAncestors = (id, me = true) => {
     let box = this.getBox(`${id}`);
     if ( box && box.infos ) {
       let ret = me ? [ box ] : [];
-      if ( box.infos.parent_node_id ) {
-        return ret.concat( this.getAncestors(box.infos.parent_node_id) );
+      if ( box.infos.parentId ) {
+        return ret.concat( this.getAncestors(box.infos.parentId) );
       } else {
         return ret;
       }
@@ -93,7 +89,7 @@ class EsperBoard extends React.Component {
   }
 
   onClick = id => {
-    //console.log('on click', id);
+    console.log('on click', id, this.getBox(id));
     let box = this.getBox(id);
     if ( box.selected ) {
       box.selected = false;
@@ -121,22 +117,22 @@ class EsperBoard extends React.Component {
   initBoard = esper => {
     const b = esper.board;
     
-    this.boardSize = b.length > 37 ? 1000 : 700;
+    this.boardSize = 1000 //b.length > 37 ? 1000 : 700;
     const offset = this.boardSize / 2;
 
     this.board = Object.keys(b).map( 
       key => {
         let r = null;
-          if ( b[key].cost < 50 ) {
+        //if ( b[key].cost < 50 ) {
           const p = b[key].position;
-          r = gridPoint('pointy-topped-odd', offset, offset, SIZE, p[0], p[1], 10 );
+          r = gridPoint('pointy-topped-odd', offset, offset, SIZE, p.x, p.y, 10 );
           r.infos = b[key];
           r.id = key;
           r.selected = false;
           r.hover = false;
           r.pathed = false;
           r = observable(r);
-        }
+        //}
         return r;
       }).filter( f => !!f );
 }
@@ -175,7 +171,7 @@ class EsperBoard extends React.Component {
       return parent ? {
         colored: parent.selected ||
           node.selected ||
-          !parent.infos.parent_node_id ||
+          !parent.infos.parentId ||
           (node.hover || node.pathed) && parent.pathed,
         x1: parent.props.x, y1: parent.props.y,
         x2: node.props.x, y2: node.props.y

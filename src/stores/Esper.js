@@ -1,3 +1,4 @@
+import axios from 'axios'
 import { action, observable, toJS } from 'mobx'
 
 import DB from './DB'
@@ -11,7 +12,20 @@ export default class EsperStore extends DB {
 
   init(config) {
     super.init(config);
-    this.db.child('GL/espers').once('value', this.loadEspers);
+    //this.db.child('GL/espers').once('value', this.loadEspers);
+    axios.get('/data/ja.espers.json').then( res => {
+      Object.keys(res.data || {}).forEach( e => {
+        const esper = res.data[e];
+        axios.get(`/data/ja.esper.${esper.id}.json`).then( r => {
+          const data = r.data;
+          if ( data && data.names ) {
+            this.espers[esper.id] = new Esper(data);
+            //this.espers[k].id = k;
+            this.esperIds.push(esper.id);
+          }
+        });
+      });
+    });
   }
 
   @action loadEspers = snap => {
@@ -31,5 +45,6 @@ export default class EsperStore extends DB {
     keys.forEach( k => {
       if ( this.espers[k] ) this.espers[k].board = data[k];
     });
+    console.log(this.espers);
   }
 }

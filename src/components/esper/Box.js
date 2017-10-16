@@ -22,6 +22,7 @@ const getFill = (box) => {
     case 'HP': color = '255, 214, 3'; break;
     case 'ABILITY': color = '173, 113, 175'; break;
     case 'MAGIC': color = '172, 203, 232'; break;
+    case 'BOOST': color = '172, 203, 232'; break;
     default: color = '255, 255, 255';
   }
   return `rgba(${color}, ${alpha})`;
@@ -33,7 +34,7 @@ const getReward = box => {
     if ( ['ATK', 'DEF', 'MAG', 'SPR', 'HP', 'MP'].indexOf(box.infos.reward[0]) !== -1 ) {
       txt = `${box.infos.reward[0]} +${box.infos.reward[1]}`;
     } else {
-      txt = box.infos.reward[0];
+      txt = `${box.infos.reward[0]} ${box.infos.reward[1]}`;
     }
   }
   return txt;

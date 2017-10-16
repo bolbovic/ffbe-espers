@@ -38,5 +38,6 @@ export default class LangStore extends Store {
     counterpart.setLocale(lang);
     this.lang = lang;
     this.langIdx = LANG_LIST.indexOf( lang );
+    this.langShort = lang.substring(0, 2);
   }
 }
