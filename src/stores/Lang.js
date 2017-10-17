@@ -8,10 +8,12 @@ import '../i18n/en-US'
 import '../i18n/es-ES'
 import '../i18n/fr-FR'
 import '../i18n/ko-KR'
+import '../i18n/ja-JP'
 import '../i18n/zh-CN'
 
-export const LANG_EN_US = 'en-US';
+export const DEFAULT = 'ja-JP';
 export const LANG_LIST = [
+  'ja-JP',
   'en-US',
   'zh-CN',
   'ko-KR',
@@ -26,7 +28,7 @@ export default class LangStore extends Store {
   @observable lang;
   @observable langShort;
 
-  init(defaultLang = LANG_EN_US) {
+  init(defaultLang = DEFAULT) {
     this.changeLang(defaultLang);
   }
 

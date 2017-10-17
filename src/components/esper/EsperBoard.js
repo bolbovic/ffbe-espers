@@ -28,7 +28,8 @@ const Link = ({colored, x1, y1, x2, y2}) => (
 @observer
 class EsperBoard extends React.Component {
   @observable board = [];
-  @observable boardSize = 0;
+  @observable boardHeight = 0;
+  @observable boardWidth = 0;
 
   constructor(props) {
     super(props);
@@ -89,7 +90,6 @@ class EsperBoard extends React.Component {
   }
 
   onClick = id => {
-    console.log('on click', id, this.getBox(id));
     let box = this.getBox(id);
     if ( box.selected ) {
       box.selected = false;
@@ -114,38 +114,44 @@ class EsperBoard extends React.Component {
     this.getAncestors(id, false).forEach( box => box.pathed = false );
   }
 
-  initBoard = esper => {
+  initBoard = (esper, evol = 2) => {
     const b = esper.board;
     
-    this.boardSize = 1000 //b.length > 37 ? 1000 : 700;
-    const offset = this.boardSize / 2;
+    this.boardWidth = 900;
+    this.boardHeight = 800;
+
+    const offsetX = this.boardWidth / 2;
+    const offsetY = this.boardHeight / 2;
 
     this.board = Object.keys(b).map( 
       key => {
         let r = null;
-        //if ( b[key].cost < 50 ) {
+        if ( evol === 3 ||
+          ( evol === 2 && b[key].cost < 50 ) ||
+          ( evol === 1 && b[key].cost < 15 ) ) {
           const p = b[key].position;
-          r = gridPoint('pointy-topped-odd', offset, offset, SIZE, p.x, p.y, 10 );
+          r = gridPoint('pointy-topped-odd', offsetX, offsetY, SIZE, p.x, p.y, 10 );
           r.infos = b[key];
           r.id = key;
           r.selected = false;
           r.hover = false;
           r.pathed = false;
           r = observable(r);
-        //}
+        }
         return r;
       }).filter( f => !!f );
 }
 
   componentWillMount() {
     if ( this.props.esper ) {
-      this.initBoard(this.props.esper);
+      this.initBoard(this.props.esper, this.props.evolution);
     }
   }
 
   componentWillReceiveProps(np) {
-    if ( np.esper !== this.props.esper && np.esper ) {
-      this.initBoard(np.esper);
+    if ( np.esper && (np.esper !== this.props.esper 
+      || np.evolution !== this.props.evolution ) ) {
+      this.initBoard(np.esper, np.evolution);
     }
   }
 
@@ -178,10 +184,11 @@ class EsperBoard extends React.Component {
       } : null;
     }).filter( f => !!f ).map( (f,k) => <Link key={ k } {...f} />);
 
+    const avail = this.props.availableCPS;
     return (
       <div>
-        <div>{ this.totalUsed }</div>
-        <svg width={ this.boardSize } height={ this.boardSize }>
+        <div>{ `${this.totalUsed} / ${avail}` }</div>
+        <svg width={ this.boardWidth } height={ this.boardHeight }>
           {links}
           {hexes}
           {drawHexes}

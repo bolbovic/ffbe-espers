@@ -12,6 +12,6 @@ const translation = {
   }
 };
 
-//counterpart.registerTranslations('fr-FR', require('counterpart/locales/fr'));
-counterpart.registerTranslations('fr-FR', translation);
+//counterpart.registerTranslations('ja-JP', require('counterpart/locales/jp'));
+counterpart.registerTranslations('ja-JP', translation);
 export default translation;

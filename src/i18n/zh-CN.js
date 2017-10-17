@@ -7,6 +7,7 @@ const translation = {
     'fr-FR': 'Français',
     'de-DE': 'Deutsch',
     'ko-KR': '한국어',
+    'ja-JP': '日本語',
     'zh-CN': '中文'
   }
 };

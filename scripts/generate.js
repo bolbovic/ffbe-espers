@@ -1,19 +1,28 @@
+require('dotenv').config();
 const axios = require('axios');
 const fs = require('fs');
 
-const DB_SITE = 'http://diffs.exviusdb.com/data_files/'
+const DB_SITE = process.env.DB_SITE;
 const DB_REP = './public/data'
 const FILE_LIST = 'file_list.json';
 
 const F_BEAST = 'F_BEAST_MST';
-const F_BEAST_NAMES = 'MST_BEAST_NAME';
 const F_BEAST_BOARD = 'F_BEAST_BOARD_PIECE_MST';
 const F_BEAST_CP = 'F_BEAST_CP_MST';
+const F_ABILITIES = 'F_ABILITY_MST';
+const F_ABILITIES_EXPLAIN = 'F_ABILITY_EXPLAIN_MST';
+const F_MAGICS = 'F_MAGIC_MST';
+const F_MAGICS_EXPLAIN = 'F_MAGIC_EXPLAIN_MST';
+
+const F_BEAST_NAMES = 'MST_BEAST_NAME';
+
 
 let D_BEAST = null;
 let D_BEAST_NAMES = null;
 let D_BEAST_CP = null;
 let D_BEAST_BOARD = null;
+let D_ABILITIES = {};
+let D_MAGICS = {};
 
 const region = process.argv[2] || 'global';
 const useCache = process.argv[3] !== 'false';
@@ -91,6 +100,8 @@ getContent(`${DB_SITE}/${FILE_LIST}`).then(res => {
     getFileContent(F_BEAST).then( res => D_BEAST = res ),
     getFileContent(F_BEAST_BOARD).then( res => D_BEAST_BOARD = res ),
     getFileContent(F_BEAST_CP).then( res => D_BEAST_CP = res ),
+    getFileContent(F_ABILITIES).then( res => res.map(a => a.ABILITY_ID).forEach( (id, key) => D_ABILITIES[id] = res[key] ) ),
+    getFileContent(F_MAGICS).then( res => res.map(a => a.MAGIC_ID).forEach( (id, key) => D_MAGICS[id] = res[key] ) ),
   ];
 
   if ( region === 'global' ) {
@@ -104,7 +115,9 @@ getContent(`${DB_SITE}/${FILE_LIST}`).then(res => {
   Promise.all( proms ).then( () => {
     process.stdin.write('OK\n');
 
-    let espers = {};
+    let abilities = {}, espers = {
+
+    }, magics = {};
     D_BEAST.forEach( e => {
       espers[e.BEAST_ID] = {
         board: {},
@@ -135,7 +148,6 @@ getContent(`${DB_SITE}/${FILE_LIST}`).then(res => {
         id = code.substring(0, code.length - 1),
         rarity = code.substring(code.length - 1);
       const cps = l['hbm8t3uK'].split(',').map( n => n !== '' ? parseInt(n) : null).filter( n => n != null);
-      //console.log(code, id, rarity, cps.length);
       if ( espers[id] )
         espers[id].cps[rarity] = cps;
     });
@@ -145,8 +157,9 @@ getContent(`${DB_SITE}/${FILE_LIST}`).then(res => {
       const [x, y] = l['1XRtI2d9'].split(':').map(n => parseInt(n)),
         cost = parseInt(l['0A1BkNWb'], 10),
         id = l.BEAST_ID,
-        pieceId = l.BEAST_PIECE_ID;
-      if (espers[id] ) {
+        pieceId = l.BEAST_PIECE_ID,
+        type = getType(l.BEAST_PIECE_TYPE);
+      if (espers[id]) {
         espers[id].board[pieceId] = {
           children: l.BEAST_PIECE_CONNECTIONS.split(',').filter( n => n && n !== ''),
           cost,
@@ -154,8 +167,14 @@ getContent(`${DB_SITE}/${FILE_LIST}`).then(res => {
           parendId: null,
           position: {x, y},
           rarity: l.UNIT_RARITY,
-          reward: getType(l.BEAST_PIECE_TYPE) !== '0' ? [getType(l.BEAST_PIECE_TYPE), l.BEAST_ABILITY_ID] : null
+          reward: type !== '0' ? [type, l.BEAST_ABILITY_ID] : null
         };
+        if (type === 'ABILITY') {
+          abilities[l.BEAST_ABILITY_ID] = D_ABILITIES[l.BEAST_ABILITY_ID];
+        }
+        if (type === 'MAGIC') {
+          magics[l.BEAST_ABILITY_ID] = D_MAGICS[l.BEAST_ABILITY_ID];
+        }
       }
     });
     D_BEAST_BOARD.forEach( l => {
@@ -166,7 +185,9 @@ getContent(`${DB_SITE}/${FILE_LIST}`).then(res => {
         children.filter( n => n && n !== '').forEach( c => espers[id].board[c].parentId = pieceId);
     });
     // Abilities
-
+    saveInDb('espers.abilities', abilities);
+    saveInDb('espers.magics', magics);
+    
     // Saving
     //console.log(espers);
     Object.keys(espers).forEach( k => {
@@ -195,9 +216,16 @@ const getType = type => {
     case '13' : val = 'DEF'; break;
     case '14' : val = 'MAG'; break;
     case '15' : val = 'SPR'; break;
-    case '20' : val = 'ABILITY'; break;
-    case '21' : val = 'MAGIC'; break;
-    case '103': val = 'BOOST'; break;
+    case '21' : val = 'ABILITY'; break;
+    case '20' : val = 'MAGIC'; break;
+    case '100': val = 'RES_FIRE'; break;
+    case '101': val = 'RES_ICE'; break;
+    case '102': val = 'RES_LIGHTNING'; break;
+    case '103': val = 'RES_WATER'; break;
+    case '104': val = 'RES_EARTH'; break;
+    case '105': val = 'RES_WIND'; break;
+    case '106': val = 'RES_LIGHT'; break;
+    case '107': val = 'RES_DARK'; break;
   }
   return val;
 }
