@@ -222,8 +222,8 @@ const getType = type => {
     case '101': val = 'RES_ICE'; break;
     case '102': val = 'RES_LIGHTNING'; break;
     case '103': val = 'RES_WATER'; break;
-    case '104': val = 'RES_EARTH'; break;
-    case '105': val = 'RES_WIND'; break;
+    case '104': val = 'RES_WIND'; break;
+    case '105': val = 'RES_EARTH'; break;
     case '106': val = 'RES_LIGHT'; break;
     case '107': val = 'RES_DARK'; break;
   }
