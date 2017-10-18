@@ -34,7 +34,6 @@ export default inject('esper')(observer( ({esper}) => {
 
   const renderItem = args => {
     const { index, handleClick, isActive, item } = args;
-
     const classes = classNames({
       [Classes.ACTIVE]: isActive,
       [Classes.INTENT_PRIMARY]: isActive,
@@ -51,23 +50,28 @@ export default inject('esper')(observer( ({esper}) => {
   };
 
   return (
-    <div>
-      <Select
-        filterable={ false }
-        itemRenderer={ renderItem }
-        items={ makeItems() }
-        onItemSelect={ onEvolChange }
-        popoverProps={ {popoverClassName: Classes.MINIMAL} }
-      >
-        <Button
-          rightIconName="caret-down"
-          text={ esper.evolution && esper.selected ? '★'.repeat(esper.evolution) : '' }
+    <div className="inline">
+      <div className="inline">
+        <Select
+          filterable={ false }
+          itemRenderer={ renderItem }
+          items={ makeItems() }
+          onItemSelect={ onEvolChange }
+          popoverProps={ {popoverClassName: Classes.MINIMAL} }
+        >
+          <Button
+            rightIconName="caret-down"
+            text={ esper.evolution && esper.selected ? '★'.repeat(esper.evolution) : '' }
+          />
+        </Select>
+      </div>
+      <div className="inline level">
+        <NumericInput
+          className="inline pt-fill"
+          max={ getMaxLevel(esper.evolution) } min={ 1 }
+          onValueChange={ onLvlChange } value={ esper.level }
         />
-      </Select>
-      <NumericInput
-        max={ getMaxLevel(esper.evolution) } min={ 1 }
-        onValueChange={ onLvlChange } value={ esper.level }
-      />
+        </div>
     </div>
   );
 }));

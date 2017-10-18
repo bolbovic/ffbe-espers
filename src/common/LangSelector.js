@@ -9,7 +9,6 @@ import { LANG_LIST } from '../stores/Lang'
 
 export default inject('lang')(observer( ({lang}) => {
   const onChange = item => {
-    console.log(item);
     lang.changeLang(item);
   }
   const renderItem = args => {

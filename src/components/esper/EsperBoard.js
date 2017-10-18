@@ -31,31 +31,18 @@ class EsperBoard extends React.Component {
   @observable boardHeight = 0;
   @observable boardWidth = 0;
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      board: []
-    };
-  }
-
   canSelect = id => {
     return true;
   }
 
   getBox = id => {
     let box = undefined;
-    this.board.forEach( b => {
-      //console.log(b.id, id);
-      if ( b.id === id ) {
-        box = b;
-      }
-    })
+    this.board.forEach( b => { if ( b.id === id ) box = b; });
     return box;
   }
 
   getChildren = id => {
-    console.log(this.getBox(id), id);
-    return this.getBox(id).infos.children.map( c => this.getBox(c) );
+    return this.getBox(id).infos.children.map( c => this.getBox(c) ).filter( c => !!c );
   }
 
   getAncestors = (id, me = true) => {
@@ -104,21 +91,38 @@ class EsperBoard extends React.Component {
 
   onMouseOver = id => {
     //console.log('mouse over', id, this.getAncestors(id));
-    this.getBox(id).hover = true;
-    this.getAncestors(id, false).forEach( box => box.pathed = true );
+    if ( this.canSelect ) {
+      this.getBox(id).hover = true;
+      this.getAncestors(id, false).forEach( box => box.pathed = true );
+      this.getDescendant(id).forEach( box => box.unpathed = true );
+    }
   }
 
   onMouseOut = id => {
     //console.log('mouse out', id);
     this.getBox(id).hover = false;
     this.getAncestors(id, false).forEach( box => box.pathed = false );
+    this.getDescendant(id).forEach( box => box.unpathed = false );
   }
 
   initBoard = (esper, evol = 2) => {
     const b = esper.board;
+    //console.log(b);
     
-    this.boardWidth = 900;
-    this.boardHeight = 800;
+    switch(evol) {
+      case 1 :
+        this.boardWidth = 475;
+        this.boardHeight = 432;
+        break;
+      case 2 :
+        this.boardWidth = 670;
+        this.boardHeight = 597;
+        break;
+      default :
+        this.boardWidth = 865;
+        this.boardHeight = 762;
+        break;
+    }
 
     const offsetX = this.boardWidth / 2;
     const offsetY = this.boardHeight / 2;
@@ -126,9 +130,7 @@ class EsperBoard extends React.Component {
     this.board = Object.keys(b).map( 
       key => {
         let r = null;
-        if ( evol === 3 ||
-          ( evol === 2 && b[key].cost < 50 ) ||
-          ( evol === 1 && b[key].cost < 15 ) ) {
+        if ( parseInt(b[key].rarity) <= evol ) {
           const p = b[key].position;
           r = gridPoint('pointy-topped-odd', offsetX, offsetY, SIZE, p.x, p.y, 10 );
           r.infos = b[key];
@@ -136,6 +138,7 @@ class EsperBoard extends React.Component {
           r.selected = false;
           r.hover = false;
           r.pathed = false;
+          r.unpathed = false;
           r = observable(r);
         }
         return r;
@@ -185,16 +188,21 @@ class EsperBoard extends React.Component {
     }).filter( f => !!f ).map( (f,k) => <Link key={ k } {...f} />);
 
     const avail = this.props.availableCPS;
-    return (
+    return this.props.esper ? (
       <div>
-        <div>{ `${this.totalUsed} / ${avail}` }</div>
+        <div className="cps centered">
+          <span style={ {color: this.totalUsed > avail ? 'red' : 'black'} }>
+            { this.totalUsed }
+          </span>
+          { ` / ${avail}` }
+        </div>
         <svg width={ this.boardWidth } height={ this.boardHeight }>
           {links}
           {hexes}
           {drawHexes}
         </svg>
       </div>
-    );
+    ) : null;
   }
 }
 export default EsperBoard;

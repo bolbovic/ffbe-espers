@@ -3,14 +3,14 @@ import Hex from 'react-hex';
 import { inject, observer } from 'mobx-react'
 
 const getFill = (box) => {
-  const { hover, pathed, selected } = box;
+  const { hover, pathed, selected, unpathed } = box;
   const reward = box.infos && box.infos.reward ? box.infos.reward[0] : '';
-  let color = 'white', alpha = '.3';
-
-  if ( hover || pathed ) {
+  let color = 'white', alpha = '.1';
+  
+  if ( (hover || pathed) && !selected ) {
     alpha = '1';
-  } else if ( selected ) {
-    alpha = '.8';
+  } else if ( selected && !unpathed && !hover ) {
+    alpha = '.9';
   }
 
   switch ( reward.substring(0,4) ) {
@@ -22,26 +22,34 @@ const getFill = (box) => {
     case 'HP': color = '255, 214, 3'; break;
     case 'RES_':
     case 'ABIL': color = '173, 113, 175'; break;
-    case 'MAGI': color = '172, 203, 232'; break;
+    case 'MAGI': color = '172, 233, 232'; break;
     default: color = '255, 255, 255';
   }
   return `rgba(${color}, ${alpha})`;
 }
 
+const Txt = ({fill, fontSize = 10, text = '', x, y}) => (
+  <text
+    fill={ fill } fontSize={ fontSize }
+    pointerEvents="none" textAnchor="middle" x={x} y={y}
+  >
+    { text }
+  </text>
+);
 
 
-export default inject('esper')(observer(({
-  box, esper, onMouseOver, onMouseOut, onClick
+export default inject('esper', 'lang')(observer(({
+  box, esper, lang, onMouseOver, onMouseOut, onClick
 }) => {
+  lang.lang;
 
   const getReward = box => {
     let txt = '';
-    console.log(esper.magics, esper.abilities)
     if ( box.infos && box.infos.reward ) {
       if ( ['ATK', 'DEF', 'MAG', 'SPR', 'HP', 'MP'].indexOf(box.infos.reward[0]) !== -1 ) {
-        txt = `${box.infos.reward[0]} +${box.infos.reward[1]}`;
+        txt = `${lang.t(`carac.${box.infos.reward[0]}`)} +${box.infos.reward[1]}`;
       } else if ( box.infos.reward[0].substring(0,4) === 'RES_' ) {
-        txt = `${box.infos.reward[0]} +${box.infos.reward[1]}%`
+        txt = `${lang.t(`carac.${box.infos.reward[0]}`)} +${box.infos.reward[1]}%`
       } else if ( box.infos.reward[0] === 'ABILITY' ) {
         txt = esper.abilities[box.infos.reward[1]].NAME;
       } else if ( box.infos.reward[0] === 'MAGIC' ) {
@@ -52,6 +60,8 @@ export default inject('esper')(observer(({
     }
     return txt;
   }
+
+  const fill = box.hover && !box.selected ? 'white' : 'black' ;
 
   return (
     <g key={`${box.gridX}-${box.gridY}`}>
@@ -64,15 +74,22 @@ export default inject('esper')(observer(({
         type="pointy-topped"
         {...box.props}
       />
-      <text
-        fill={ box.hover ? 'white' : 'black' }
-        fontSize={ 10 }
-        pointerEvents="none"
-        textAnchor="middle" x={box.props.x} y={box.props.y + 6}
-      >
-        {getReward(box)}
-      </text>
-    </g>
+      { box.infos.parentId ?
+        <Txt
+          fill={ fill } fontSize={ 12 } text={ '★'.repeat(box.infos.rarity) || '' }
+          x={ box.props.x } y={ box.props.y - 16 }
+        /> : null }
+      { box.infos.parentId ?
+        <Txt
+          fill={ fill } text={ getReward(box) }
+          x={ box.props.x } y={box.props.y + 6}
+        /> : null }
+      { box.infos.parentId ?
+        <Txt
+          fill={ fill } text={ `SP ${box.infos.cost}` }
+          x={ box.props.x } y={ box.props.y + 28 }
+        /> : null }
+        </g>
   );
 }));
 

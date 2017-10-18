@@ -9,6 +9,8 @@ import { LANG_LIST } from '../../stores/Lang'
 
 export default inject('esper')(observer( ({esper}) => {
   const onChange = item => {
+    esper.evolution = 1;
+    esper.level = 30;
     esper.selected = item;
   }
 
@@ -32,17 +34,19 @@ export default inject('esper')(observer( ({esper}) => {
   };
 
   return (
-    <Select
-      filterable={ false }
-      itemRenderer={ renderItem }
-      items={ esper.esperIds }
-      onItemSelect={ onChange }
-      popoverProps={ {popoverClassName: Classes.MINIMAL} }
-    >
-      <Button
-        rightIconName="caret-down"
-        text={ esper.selected ? esper.espers[esper.selected].name : '' }
-      />
-    </Select>
+    <div className="inline">
+      <Select
+        filterable={ false }
+        itemRenderer={ renderItem }
+        items={ esper.esperIds }
+        onItemSelect={ onChange }
+        popoverProps={ {popoverClassName: Classes.MINIMAL} }
+      >
+        <Button
+          rightIconName="caret-down"
+          text={ esper.selected ? esper.espers[esper.selected].name : '' }
+        />
+      </Select>
+    </div>
   );
 }));
