@@ -1,7 +1,6 @@
 import { action, observable } from 'mobx';
 
-import Store from './Store'
-
+import Store from './Store';
 
 export default class UIStore extends Store {
   @observable history = null;
@@ -10,13 +9,15 @@ export default class UIStore extends Store {
   @observable preventLeave = false;
   @observable preventCallback;
 
-  @action setHistory = (history) => {
+  @action
+  setHistory = history => {
     this.history = history;
     this.history.listen(this.handleHistoryChanged);
     this.location = this.history.location;
-  }
+  };
 
-  @action handleHistoryChanged = (location) => {
+  @action
+  handleHistoryChanged = location => {
     this.location = location;
-  }
+  };
 }

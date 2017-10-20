@@ -1,15 +1,15 @@
 import counterpart from 'counterpart';
 import { action, observable } from 'mobx';
 
-import Store from './Store'
+import Store from './Store';
 
-import '../i18n/de-DE'
-import '../i18n/en-US'
-import '../i18n/es-ES'
-import '../i18n/fr-FR'
-import '../i18n/ko-KR'
-import '../i18n/ja-JP'
-import '../i18n/zh-CN'
+import '../i18n/de-DE';
+import '../i18n/en-US';
+import '../i18n/es-ES';
+import '../i18n/fr-FR';
+import '../i18n/ko-KR';
+import '../i18n/ja-JP';
+import '../i18n/zh-CN';
 
 export const DEFAULT = 'ja-JP';
 export const LANG_LIST = [
@@ -19,9 +19,8 @@ export const LANG_LIST = [
   'ko-KR',
   'fr-FR',
   'de-DE',
-  'es-ES',
+  'es-ES'
 ];
-
 
 export default class LangStore extends Store {
   @observable langIdx = 0;
@@ -36,10 +35,11 @@ export default class LangStore extends Store {
     return counterpart.translate(...args);
   };
 
-  @action changeLang = (lang) => {
+  @action
+  changeLang = lang => {
     counterpart.setLocale(lang);
     this.lang = lang;
-    this.langIdx = LANG_LIST.indexOf( lang );
+    this.langIdx = LANG_LIST.indexOf(lang);
     this.langShort = lang.substring(0, 2);
-  }
+  };
 }

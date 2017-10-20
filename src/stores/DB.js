@@ -1,7 +1,6 @@
-import { observable } from 'mobx'
+import { observable } from 'mobx';
 
-import Store from './Store'
-
+import Store from './Store';
 
 export default class DB extends Store {
   init(config) {

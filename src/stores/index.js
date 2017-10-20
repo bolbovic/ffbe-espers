@@ -1,8 +1,8 @@
-import Esper from './Esper'
-import Files from './Files'
-import FirebaseConfig from '../config/Firebase'
-import Lang from './Lang'
-import UI from './UI'
+import Esper from './Esper';
+import Files from './Files';
+import FirebaseConfig from '../config/Firebase';
+import Lang from './Lang';
+import UI from './UI';
 
 class RootStore {
   constructor() {

@@ -7,15 +7,15 @@ const FLAT = 'flat-topped';
 const RANGE6 = [0, 60, 120, 180, 240, 300];
 const SQRT3 = Math.sqrt(3);
 
-const getDiff = (type) => {
+const getDiff = type => {
   if (type === POINTY) return Math.PI / 6;
   if (type === FLAT) return 0;
 };
 const range = n => Array.from(Array(n).keys());
 const product = (p, q) => {
   const l = [];
-  range(p).forEach((i) => {
-    range(q).forEach((j) => {
+  range(p).forEach(i => {
+    range(q).forEach(j => {
       l.push([i, j]);
     });
   });
@@ -24,14 +24,15 @@ const product = (p, q) => {
 
 export const corners = (type, x, y, size) => {
   const diff = getDiff(type);
-  return THETAS
-    .map(theta => theta + diff)
-    .map(theta => [x + size * Math.cos(theta), y + size * Math.sin(theta)]);
+  return THETAS.map(theta => theta + diff).map(theta => [
+    x + size * Math.cos(theta),
+    y + size * Math.sin(theta)
+  ]);
 };
 
 export const hexCorners = (type, x, y, size) => {
   const diff = type === POINTY ? 30 : 0;
-  return RANGE6.map((baseDeg) => {
+  return RANGE6.map(baseDeg => {
     const rad = Math.PI / 180 * (baseDeg + diff);
     return [x + size * Math.cos(rad), y + size * Math.sin(rad)];
   });
@@ -55,11 +56,11 @@ export const gridPoint = (oType, oX, oY, size, gridX, gridY, padding = 0) => {
         type: oType,
         x,
         y,
-        size,
+        size
       },
       gridX,
       gridY,
-      corners: hexCorners(oType, x, y, size),
+      corners: hexCorners(oType, x, y, size)
     };
   } else if (oType === FLAT) {
     const width = size * 2;
@@ -76,17 +77,17 @@ export const gridPoint = (oType, oX, oY, size, gridX, gridY, padding = 0) => {
         type: oType,
         x,
         y,
-        size,
+        size
       },
       gridX,
       gridY,
-      corners: hexCorners(oType, x, y, size),
+      corners: hexCorners(oType, x, y, size)
     };
   } else if (oType === POINTYO) {
     const height = size * 2;
     const width = size * SQRT3;
     const diffXFromY = gridY * (width + padding) / 2;
-    const gridPointX = (gridX-gridY) * (width + padding) + diffXFromY;
+    const gridPointX = (gridX - gridY) * (width + padding) + diffXFromY;
     const gridPointY = gridY * (height + padding) * 0.75;
 
     const x = gridPointX + oX;
@@ -97,11 +98,11 @@ export const gridPoint = (oType, oX, oY, size, gridX, gridY, padding = 0) => {
         type: POINTY,
         x,
         y,
-        size,
+        size
       },
       gridX,
       gridY,
-      corners: hexCorners(oType, x, y, size),
+      corners: hexCorners(oType, x, y, size)
     };
   } else {
     throw new Error(`grid oType was either ${POINTY} or ${FLAT}`);
@@ -109,6 +110,15 @@ export const gridPoint = (oType, oX, oY, size, gridX, gridY, padding = 0) => {
   /* eslint-enable no-else-return */
 };
 
-export const gridPoints = (oType, oX, oY, size, gridWidth, gridHeight, padding = 0) =>
+export const gridPoints = (
+  oType,
+  oX,
+  oY,
+  size,
+  gridWidth,
+  gridHeight,
+  padding = 0
+) =>
   product(gridHeight, gridWidth).map(([gridY, gridX]) =>
-    gridPoint(oType, oX, oY, size, gridX, gridY, padding))
+    gridPoint(oType, oX, oY, size, gridX, gridY, padding)
+  );
