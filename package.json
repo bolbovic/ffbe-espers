@@ -28,7 +28,11 @@
     "react-router-dom": "^4.2.2"
   },
   "devDependencies": {
+    "eslint": "^4.9.0",
     "nwb": "0.15.x"
+  },
+  "prettier":{
+    "singleQuote": true
   },
   "author": "",
   "license": "MIT",
