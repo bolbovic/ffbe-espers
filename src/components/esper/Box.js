@@ -3,14 +3,14 @@ import Hex from 'react-hex';
 import { inject, observer } from 'mobx-react';
 
 const getFill = box => {
-  const { hover, pathed, selected, unpathed } = box;
+  const { pathed, selectable, selected, unpathed } = box;
   const reward = box.infos && box.infos.reward ? box.infos.reward[0] : '';
   let color = 'white',
     alpha = '.1';
 
-  if ((hover || pathed) && !selected) {
+  if ((selectable || pathed) && !selected) {
     alpha = '1';
-  } else if (selected && !unpathed && !hover) {
+  } else if (selected && !unpathed && !selectable) {
     alpha = '.9';
   }
 
@@ -87,7 +87,7 @@ export default inject('esper', 'lang')(
       return txt;
     };
 
-    const fill = box.hover && !box.selected ? 'white' : 'black';
+    const fill = box.selectable && !box.selected ? 'white' : 'black';
 
     return (
       <g key={`${box.gridX}-${box.gridY}`}>

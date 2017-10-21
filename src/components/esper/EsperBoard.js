@@ -36,8 +36,8 @@ class EsperBoard extends React.Component {
   @observable boardHeight = 0;
   @observable boardWidth = 0;
 
-  canSelect = id => {
-    return true;
+  canSelect = () => {
+    return this.totalUsed + this.hoverChanged <= this.props.availableCPS;
   };
 
   getBox = id => {
@@ -114,20 +114,23 @@ class EsperBoard extends React.Component {
 
   onClick = id => {
     let box = this.getBox(id);
-    if (box.selected) {
-      box.selected = false;
-      this.getDescendant(id).forEach(box => (box.selected = false));
-    } else {
-      if (this.canSelect(id)) {
-        box.selected = true;
-        this.getAncestors(id).forEach(box => (box.selected = true));
+    if (this.canSelect()) {
+      if (box.selected) {
+        box.selected = false;
+        this.getDescendant(id).forEach(box => (box.selected = false));
+      } else {
+        if (this.canSelect(id)) {
+          box.selected = true;
+          this.getAncestors(id).forEach(box => (box.selected = true));
+        }
       }
     }
   };
 
   onMouseOver = id => {
-    if (this.canSelect) {
-      this.getBox(id).hover = true;
+    this.getBox(id).hover = true;
+    if (this.canSelect()) {
+      this.getBox(id).selectable = true;
       this.getAncestors(id, false).forEach(box => (box.pathed = true));
       this.getDescendant(id).forEach(box => (box.unpathed = true));
     }
@@ -135,6 +138,7 @@ class EsperBoard extends React.Component {
 
   onMouseOut = id => {
     this.getBox(id).hover = false;
+    this.getBox(id).selectable = false;
     this.getAncestors(id, false).forEach(box => (box.pathed = false));
     this.getDescendant(id).forEach(box => (box.unpathed = false));
   };
@@ -175,11 +179,12 @@ class EsperBoard extends React.Component {
             p.y,
             10
           );
-          r.infos = b[key];
           r.id = key;
-          r.selected = false;
+          r.infos = b[key];
           r.hover = false;
           r.pathed = false;
+          r.selectable = false;
+          r.selected = false;
           r.unpathed = false;
           r = observable(r);
         }
