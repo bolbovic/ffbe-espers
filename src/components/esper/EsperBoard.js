@@ -67,8 +67,8 @@ class EsperBoard extends React.Component {
     return [];
   };
 
-  getDescendant = id => {
-    let boxes = this.getChildren(`${id}`);
+  getDescendant = (id, me = false) => {
+    let boxes = me ? [this.getBox(`${id}`)] : this.getChildren(`${id}`);
     if (boxes.length > 0) {
       let a = [];
       boxes.forEach(b => {
@@ -79,11 +79,37 @@ class EsperBoard extends React.Component {
     return boxes;
   };
 
+  getHoveredBox = id => {
+    let box = undefined;
+    this.board.forEach(b => {
+      if (b.hover) box = b;
+    });
+    return box;
+  };
+
   @computed
   get totalUsed() {
     let total = 0;
     this.board.forEach(b => (total += b.selected ? b.infos.cost : 0));
     return total;
+  }
+
+  @computed
+  get hoverChanged() {
+    let cost = 0,
+      hBox = this.getHoveredBox();
+    if (hBox) {
+      if (hBox.selected) {
+        this.getDescendant(hBox.id, true).forEach(c => {
+          if (c.selected) cost -= c.infos.cost;
+        });
+      } else {
+        this.getAncestors(hBox.id).forEach(c => {
+          if (!c.selected) cost += c.infos.cost;
+        });
+      }
+    }
+    return cost;
   }
 
   onClick = id => {
@@ -100,7 +126,6 @@ class EsperBoard extends React.Component {
   };
 
   onMouseOver = id => {
-    //console.log('mouse over', id, this.getAncestors(id));
     if (this.canSelect) {
       this.getBox(id).hover = true;
       this.getAncestors(id, false).forEach(box => (box.pathed = true));
@@ -109,7 +134,6 @@ class EsperBoard extends React.Component {
   };
 
   onMouseOut = id => {
-    //console.log('mouse out', id);
     this.getBox(id).hover = false;
     this.getAncestors(id, false).forEach(box => (box.pathed = false));
     this.getDescendant(id).forEach(box => (box.unpathed = false));
@@ -221,7 +245,9 @@ class EsperBoard extends React.Component {
           <span style={{ color: this.totalUsed > avail ? 'red' : 'black' }}>
             {this.totalUsed}
           </span>
-          {` / ${avail}`}
+          {` / ${avail}${this.hoverChanged !== 0
+            ? ` (${this.totalUsed + this.hoverChanged})`
+            : ''}`}
         </div>
         <svg width={this.boardWidth} height={this.boardHeight}>
           {links}

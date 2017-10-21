@@ -9,7 +9,6 @@ export default class Esper extends Named {
   constructor(data) {
     super(data);
     Object.assign(this, data);
-    console.log(this.cps);
   }
 
   cpTotal(evol = 1, lvl = 1) {
