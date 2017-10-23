@@ -1,11 +1,9 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
 
-import * as classNames from 'classnames';
+import classNames from 'classnames';
 import { Button, Classes, NumericInput, MenuItem } from '@blueprintjs/core';
 import { Select } from '@blueprintjs/labs';
-
-import { LANG_LIST } from '../../stores/Lang';
 
 export default inject('esper')(
   observer(({ esper }) => {
@@ -23,11 +21,11 @@ export default inject('esper')(
     };
 
     const makeItems = () => {
-      let items = [],
+      const items = [],
         max = esper.espers[esper.selected]
           ? esper.espers[esper.selected].maxEvol
           : 0;
-      for (var i = 1; i <= max; i++) items.push(i);
+      for (let i = 1; i <= max; i++) items.push(i);
       return items;
     };
 
@@ -41,7 +39,7 @@ export default inject('esper')(
     };
 
     const renderItem = args => {
-      const { index, handleClick, isActive, item } = args;
+      const { handleClick, isActive, item } = args;
       const classes = classNames({
         [Classes.ACTIVE]: isActive,
         [Classes.INTENT_PRIMARY]: isActive

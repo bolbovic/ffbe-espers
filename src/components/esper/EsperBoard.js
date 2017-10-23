@@ -1,9 +1,8 @@
 import React from 'react';
-import { action, computed, observable } from 'mobx';
+import { computed, observable } from 'mobx';
 import Hex from 'react-hex';
 import { observer } from 'mobx-react';
 
-import { DatabaseRef } from '../../config/Firebase';
 import { gridPoint } from '../../helpers/hexa';
 import Box from './Box';
 
@@ -29,6 +28,13 @@ const Link = ({ colored, x1, y1, x2, y2 }) => (
     stroke={colored ? '#9999FF' : '#999999'}
   />
 );
+Link.propTypes = {
+  colored: React.PropTypes.bool,
+  x1: React.PropTypes.number,
+  x2: React.PropTypes.number,
+  y1: React.PropTypes.number,
+  y2: React.PropTypes.number
+};
 
 @observer
 class EsperBoard extends React.Component {
@@ -36,9 +42,8 @@ class EsperBoard extends React.Component {
   @observable boardHeight = 0;
   @observable boardWidth = 0;
 
-  canSelect = () => {
-    return this.totalUsed + this.hoverChanged <= this.props.availableCPS;
-  };
+  canSelect = () =>
+    this.totalUsed + this.hoverChanged <= this.props.availableCPS;
 
   getBox = id => {
     let box = undefined;
@@ -48,21 +53,19 @@ class EsperBoard extends React.Component {
     return box;
   };
 
-  getChildren = id => {
-    return this.getBox(id)
+  getChildren = id =>
+    this.getBox(id)
       .infos.children.map(c => this.getBox(c))
       .filter(c => !!c);
-  };
 
   getAncestors = (id, me = true) => {
-    let box = this.getBox(`${id}`);
+    const box = this.getBox(`${id}`);
     if (box && box.infos) {
-      let ret = me ? [box] : [];
+      const ret = me ? [box] : [];
       if (box.infos.parentId) {
         return ret.concat(this.getAncestors(box.infos.parentId));
-      } else {
-        return ret;
       }
+      return ret;
     }
     return [];
   };
@@ -79,7 +82,7 @@ class EsperBoard extends React.Component {
     return boxes;
   };
 
-  getHoveredBox = id => {
+  getHoveredBox = () => {
     let box = undefined;
     this.board.forEach(b => {
       if (b.hover) box = b;
@@ -96,8 +99,8 @@ class EsperBoard extends React.Component {
 
   @computed
   get hoverChanged() {
-    let cost = 0,
-      hBox = this.getHoveredBox();
+    const hBox = this.getHoveredBox();
+    let cost = 0;
     if (hBox) {
       if (hBox.selected) {
         this.getDescendant(hBox.id, true).forEach(c => {
@@ -112,22 +115,20 @@ class EsperBoard extends React.Component {
     return cost;
   }
 
-  onClick = id => {
-    let box = this.getBox(id);
+  handleClick = id => {
+    const box = this.getBox(id);
     if (this.canSelect()) {
       if (box.selected) {
         box.selected = false;
         this.getDescendant(id).forEach(box => (box.selected = false));
-      } else {
-        if (this.canSelect(id)) {
-          box.selected = true;
-          this.getAncestors(id).forEach(box => (box.selected = true));
-        }
+      } else if (this.canSelect(id)) {
+        box.selected = true;
+        this.getAncestors(id).forEach(box => (box.selected = true));
       }
     }
   };
 
-  onMouseOver = id => {
+  handleMouseOver = id => {
     this.getBox(id).hover = true;
     if (this.canSelect()) {
       this.getBox(id).selectable = true;
@@ -136,7 +137,7 @@ class EsperBoard extends React.Component {
     }
   };
 
-  onMouseOut = id => {
+  handleMouseOut = id => {
     this.getBox(id).hover = false;
     this.getBox(id).selectable = false;
     this.getAncestors(id, false).forEach(box => (box.pathed = false));
@@ -217,9 +218,9 @@ class EsperBoard extends React.Component {
       <Box
         box={obj}
         key={key}
-        onClick={this.onClick}
-        onMouseOut={this.onMouseOut}
-        onMouseOver={this.onMouseOver}
+        onClick={this.handleClick}
+        onMouseOut={this.handleMouseOut}
+        onMouseOver={this.handleMouseOver}
       />
     ));
 
@@ -247,7 +248,7 @@ class EsperBoard extends React.Component {
     return this.props.esper ? (
       <div>
         <div className="cps centered">
-          <span style={{ color: this.totalUsed > avail ? 'red' : 'black' }}>
+          <span className={this.totalUsed > avail ? 'error' : ''}>
             {this.totalUsed}
           </span>
           {` / ${avail}${this.hoverChanged !== 0
@@ -263,4 +264,10 @@ class EsperBoard extends React.Component {
     ) : null;
   }
 }
+
+EsperBoard.propTypes = {
+  availableCPS: React.PropTypes.number,
+  esper: React.PropTypes.object,
+  evolution: React.PropTypes.bool
+};
 export default EsperBoard;

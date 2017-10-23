@@ -4,5 +4,9 @@
     "prettier",
     "prettier/react",
     "prettier/standard"
-  ]
+  ],
+  "rules": {
+    "no-invalid-this": "off",
+    "no-unmodified-loop-condition": "off"
+  }
 }
