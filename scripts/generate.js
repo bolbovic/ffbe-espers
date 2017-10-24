@@ -174,10 +174,34 @@ getContent(`${DB_SITE}/${FILE_LIST}`)
       getFileContent(F_ABILITIES).then(res =>
         res
           .map(a => a.ABILITY_ID)
-          .forEach((id, key) => (D_ABILITIES[id] = res[key]))
+          .forEach(
+            (id, key) =>
+              (D_ABILITIES[id] = Object.assign(D_ABILITIES[id] || {}, res[key]))
+          )
       ),
       getFileContent(F_MAGICS).then(res =>
-        res.map(a => a.MAGIC_ID).forEach((id, key) => (D_MAGICS[id] = res[key]))
+        res
+          .map(a => a.MAGIC_ID)
+          .forEach(
+            (id, key) =>
+              (D_MAGICS[id] = Object.assign(res[key], D_MAGICS[id] || null))
+          )
+      ),
+      getFileContent(F_ABILITIES_EXPLAIN).then(res =>
+        res
+          .map(a => a.ABILITY_ID)
+          .forEach(
+            (id, key) =>
+              (D_ABILITIES[id] = Object.assign(D_ABILITIES[id] || {}, res[key]))
+          )
+      ),
+      getFileContent(F_MAGICS_EXPLAIN).then(res =>
+        res
+          .map(a => a.MAGIC_ID)
+          .forEach(
+            (id, key) =>
+              (D_MAGICS[id] = Object.assign(res[key], D_MAGICS[id] || null))
+          )
       )
     ];
 

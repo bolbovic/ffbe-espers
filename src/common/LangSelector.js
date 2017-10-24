@@ -32,15 +32,20 @@ export default inject('lang')(
     };
 
     return (
-      <Select
-        filterable={false}
-        itemRenderer={renderItem}
-        items={LANG_LIST}
-        onItemSelect={onChange}
-        popoverProps={{ popoverClassName: Classes.MINIMAL }}
-      >
-        <Button rightIconName="caret-down" text={lang.t(`lang.${lang.lang}`)} />
-      </Select>
+      <div className="lang-selector">
+        <Select
+          filterable={false}
+          itemRenderer={renderItem}
+          items={LANG_LIST}
+          onItemSelect={onChange}
+          popoverProps={{ popoverClassName: Classes.MINIMAL }}
+        >
+          <Button
+            rightIconName="caret-down"
+            text={lang.t(`lang.${lang.lang}`)}
+          />
+        </Select>
+      </div>
     );
   })
 );

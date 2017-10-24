@@ -3,6 +3,7 @@ import { computed, observable } from 'mobx';
 import Hex from 'react-hex';
 import { observer } from 'mobx-react';
 
+import Abilities from './Abilities';
 import { gridPoint } from '../../helpers/hexa';
 import Box from './Box';
 
@@ -252,23 +253,26 @@ class EsperBoard extends React.Component {
             {this.totalUsed}
           </span>
           {` / ${avail}`}
-          {this.hoverChanged !== 0 ? (
-            <span
-              className={
-                this.totalUsed + this.hoverChanged > avail ? 'error' : ''
-              }
-            >
-              {` (${this.totalUsed + this.hoverChanged})`}
-            </span>
-          ) : (
-            ''
-          )}
+          <div className="cp-hover">
+            {this.hoverChanged !== 0 ? (
+              <span
+                className={
+                  this.totalUsed + this.hoverChanged > avail ? 'error' : ''
+                }
+              >
+                {` (${this.totalUsed + this.hoverChanged})`}
+              </span>
+            ) : (
+              ' '
+            )}
+          </div>
         </div>
         <svg width={this.boardWidth} height={this.boardHeight}>
           {links}
           {hexes}
           {drawHexes}
         </svg>
+        <Abilities board={this.board} />
       </div>
     ) : null;
   }
@@ -277,6 +281,6 @@ class EsperBoard extends React.Component {
 EsperBoard.propTypes = {
   availableCPS: React.PropTypes.number,
   esper: React.PropTypes.object,
-  evolution: React.PropTypes.bool
+  evolution: React.PropTypes.number
 };
 export default EsperBoard;

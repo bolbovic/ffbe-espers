@@ -19,3 +19,25 @@
 .error {
   color: red;
 }
+
+.ability {
+  color: rgb(173, 113, 175);
+}
+
+.magic {
+  color: rgb(172, 233, 232);
+}
+
+.skill {
+  margin-bottom: 5px;
+}
+
+.cp-hover {
+  display: inline-block;
+  padding-left: 5px;
+  width: 50px;
+}
+
+.lang-selector {
+  float: left;
+}
