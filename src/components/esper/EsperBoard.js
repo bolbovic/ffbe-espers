@@ -251,9 +251,18 @@ class EsperBoard extends React.Component {
           <span className={this.totalUsed > avail ? 'error' : ''}>
             {this.totalUsed}
           </span>
-          {` / ${avail}${this.hoverChanged !== 0
-            ? ` (${this.totalUsed + this.hoverChanged})`
-            : ''}`}
+          {` / ${avail}`}
+          {this.hoverChanged !== 0 ? (
+            <span
+              className={
+                this.totalUsed + this.hoverChanged > avail ? 'error' : ''
+              }
+            >
+              {` (${this.totalUsed + this.hoverChanged})`}
+            </span>
+          ) : (
+            ''
+          )}
         </div>
         <svg width={this.boardWidth} height={this.boardHeight}>
           {links}
