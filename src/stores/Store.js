@@ -4,5 +4,5 @@ export default class Store {
     this.init(...args);
   }
 
-  init() {}
+  init = () => null;
 }
