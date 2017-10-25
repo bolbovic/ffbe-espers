@@ -10,7 +10,7 @@ Ideas to implement:
 - Example builds
 - GL version
 - Figure out translation from what is already translated
-- ~~Saving builds?~~ Might need too much db for now.
+- ~~Saving builds?~~ Will need a dynamic db, not now.
 
 Point to think about while coding or before submitting features:
 - Keeping the less possible data in the code itself: we want to rely on scripts and game files to generate the data, we don't want to maintain the data and have to compile again to update data. It also mean that I don't think we should include data that is not in the files and it might mean say no to real numbers but that should be fixed by the game itself before the end of 2017 (for JP version anyway).
@@ -25,7 +25,8 @@ Requirements:
 - Node 6.10 with npm (yarn is better) installed
 
 How to install:
-- Create folders tmp and public/data
+- create folders tmp and public/data
+- copy .env.template to .env
 - yarn install (or npm i)
 - node script/generatedb.js ja
-- yarn build / yarn start
+- yarn build / yarn start (or npm run build / npm run start)
