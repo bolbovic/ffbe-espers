@@ -6,6 +6,7 @@ Things left to do before beta:
 [ ] Possibility to share builds would be really good (and not that hard to code, come on).
 
 Ideas to implement:
+- Add loading
 - Images in center to know what esper we are looking at right away
 - Example builds
 - GL version
