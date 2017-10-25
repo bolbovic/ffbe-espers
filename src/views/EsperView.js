@@ -1,6 +1,7 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
 
+import CopyToClipboardUrl from '../common/CopyToClipboardUrl';
 import EsperBoard from '../components/esper/EsperBoard';
 import EsperSelector from '../components/esper/EsperSelector';
 import EsperLevelSelector from '../components/esper/EsperLevelSelector';
@@ -11,14 +12,10 @@ export default inject('esper')(
       <div className="leftbar centered">
         <EsperSelector />
         {esper.selected ? <EsperLevelSelector /> : null}
+        {esper.selected ? <CopyToClipboardUrl /> : null}
       </div>
       <div className="board">
-        <EsperBoard
-          availableCPS={esper.availableCPS}
-          esper={esper.selected ? esper.espers[esper.selected] : null}
-          evolution={esper.evolution}
-          level={esper.level}
-        />
+        <EsperBoard />
       </div>
     </div>
   ))

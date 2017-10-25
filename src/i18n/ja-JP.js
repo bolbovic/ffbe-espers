@@ -1,6 +1,9 @@
 import counterpart from 'counterpart';
 
 const translation = {
+  buttons: {
+    clipboard: 'コピー'
+  },
   carac: {
     HP: 'HP',
     MP: 'MP',

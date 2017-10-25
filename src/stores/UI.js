@@ -1,3 +1,4 @@
+import copy from 'copy-to-clipboard';
 import { action, observable } from 'mobx';
 
 import Store from './Store';
@@ -19,5 +20,9 @@ export default class UIStore extends Store {
   @action
   handleHistoryChanged = location => {
     this.location = location;
+  };
+
+  handleCopyToClipboard = () => {
+    copy(window.location.href);
   };
 }

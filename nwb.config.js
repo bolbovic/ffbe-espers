@@ -16,6 +16,6 @@ module.exports = {
         test: /\.jsx?/
       }
     },
-    publicPath: ''
+    publicPath: '/'
   }
-}
+};

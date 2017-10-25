@@ -1,9 +1,9 @@
 import createHistory from 'history/createBrowserHistory';
 
-export default uiSt =>
+export default ui =>
   createHistory({
     getUserConfirmation(message, callback) {
-      uiSt.preventLeave = true;
-      uiSt.preventCallback = callback;
+      ui.preventLeave = true;
+      ui.preventCallback = callback;
     }
   });

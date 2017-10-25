@@ -9,7 +9,8 @@ import '../node_modules/@blueprintjs/core/dist/blueprint.css';
 import '../node_modules/normalize.css/normalize.css';
 import './App.css';
 
-const history = createHistory(stores.uiSt);
+const history = createHistory(stores.ui);
+stores.ui.setHistory(history);
 
 const App = () => (
   <Provider {...stores}>

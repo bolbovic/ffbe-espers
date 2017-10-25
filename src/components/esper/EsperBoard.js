@@ -1,7 +1,7 @@
 import React from 'react';
-import { computed, observable } from 'mobx';
+import { computed, observable, reaction } from 'mobx';
 import Hex from 'react-hex';
-import { observer } from 'mobx-react';
+import { inject, observer } from 'mobx-react';
 
 import Abilities from './Abilities';
 import { gridPoint } from '../../helpers/hexa';
@@ -37,6 +37,7 @@ Link.propTypes = {
   y2: React.PropTypes.number
 };
 
+@inject('esper')
 @observer
 class EsperBoard extends React.Component {
   @observable board = [];
@@ -44,7 +45,7 @@ class EsperBoard extends React.Component {
   @observable boardWidth = 0;
 
   canSelect = () =>
-    this.totalUsed + this.hoverChanged <= this.props.availableCPS;
+    this.totalUsed + this.hoverChanged <= this.props.esper.availableCPS;
 
   getBox = id => {
     let box = undefined;
@@ -120,11 +121,11 @@ class EsperBoard extends React.Component {
     const box = this.getBox(id);
     if (this.canSelect()) {
       if (box.selected) {
-        box.selected = false;
-        this.getDescendant(id).forEach(box => (box.selected = false));
-      } else if (this.canSelect(id)) {
-        box.selected = true;
-        this.getAncestors(id).forEach(box => (box.selected = true));
+        this.props.esper.unselectBoxes(
+          this.getDescendant(id, true).map(box => box.id)
+        );
+      } else {
+        this.props.esper.selectBoxes(this.getAncestors(id).map(box => box.id));
       }
     }
   };
@@ -145,9 +146,8 @@ class EsperBoard extends React.Component {
     this.getDescendant(id).forEach(box => (box.unpathed = false));
   };
 
-  initBoard = (esper, evol = 2) => {
+  initBoard = (esper, evol = 2, sBoxes = []) => {
     const b = esper.board;
-    //console.log(b);
 
     switch (evol) {
       case 1:
@@ -186,7 +186,7 @@ class EsperBoard extends React.Component {
           r.hover = false;
           r.pathed = false;
           r.selectable = false;
-          r.selected = false;
+          r.selected = sBoxes.indexOf(key) !== -1;
           r.unpathed = false;
           r = observable(r);
         }
@@ -196,17 +196,18 @@ class EsperBoard extends React.Component {
   };
 
   componentWillMount() {
-    if (this.props.esper) {
-      this.initBoard(this.props.esper, this.props.evolution);
-    }
-  }
-
-  componentWillReceiveProps(np) {
-    if (
-      np.esper &&
-      (np.esper !== this.props.esper || np.evolution !== this.props.evolution)
-    ) {
-      this.initBoard(np.esper, np.evolution);
+    const e = this.props.esper;
+    if (e) {
+      if (e.selected)
+        this.initBoard(e.espers[e.selected], e.evolution, e.selectedBoxes);
+      reaction(
+        () => ({
+          esper: e.selected,
+          evol: e.evolution,
+          boxes: e.selectedBoxes
+        }),
+        ({ esper, evol, boxes }) => this.initBoard(e.espers[esper], evol, boxes)
+      );
     }
   }
 
@@ -245,7 +246,7 @@ class EsperBoard extends React.Component {
       .filter(f => !!f)
       .map((f, k) => <Link key={k} {...f} />);
 
-    const avail = this.props.availableCPS;
+    const avail = this.props.esper.availableCPS;
     return this.props.esper ? (
       <div>
         <div className="cps centered">
@@ -279,8 +280,6 @@ class EsperBoard extends React.Component {
 }
 
 EsperBoard.propTypes = {
-  availableCPS: React.PropTypes.number,
-  esper: React.PropTypes.object,
-  evolution: React.PropTypes.number
+  esper: React.PropTypes.object
 };
 export default EsperBoard;
