@@ -247,7 +247,7 @@ class EsperBoard extends React.Component {
       .map((f, k) => <Link key={k} {...f} />);
 
     const avail = this.props.esper.availableCPS;
-    return this.props.esper ? (
+    return this.props.esper.selected ? (
       <div>
         <div className="cps centered">
           <span className={this.totalUsed > avail ? 'error' : ''}>
