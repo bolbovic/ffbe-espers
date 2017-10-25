@@ -7,7 +7,7 @@ import EsperLevelSelector from '../components/esper/EsperLevelSelector';
 
 export default inject('esper')(
   observer(({ esper }) => (
-    <div className="esper-view centered">
+    <div className="esper-view centered mt-10 mb-10">
       <div className="leftbar centered">
         <EsperSelector />
         {esper.selected ? <EsperLevelSelector /> : null}

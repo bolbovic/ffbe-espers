@@ -31,7 +31,7 @@ export default inject('lang')(
       );
     };
 
-    return (
+    return false ? (
       <div className="lang-selector">
         <Select
           filterable={false}
@@ -46,6 +46,6 @@ export default inject('lang')(
           />
         </Select>
       </div>
-    );
+    ) : null;
   })
 );

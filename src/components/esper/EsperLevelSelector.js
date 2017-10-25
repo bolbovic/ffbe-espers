@@ -14,7 +14,7 @@ export default inject('esper')(
           i = 40;
           break;
         case 3:
-          i = 50;
+          i = 60;
           break;
       }
       return i;
