@@ -1,8 +1,6 @@
 export default class Store {
   constructor(root, ...args) {
     this.stores = root;
-    this.init(...args);
+    if (this.init) this.init(...args);
   }
-
-  init = () => null;
 }

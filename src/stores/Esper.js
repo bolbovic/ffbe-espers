@@ -15,8 +15,7 @@ export default class EsperStore extends Store {
   @observable selected = null;
 
   @action
-  init(config) {
-    super.init(config);
+  init() {
     axios.get('/data/ja.espers.json').then(res => {
       Object.keys(res.data || {}).forEach(e => {
         const esper = res.data[e];
@@ -43,4 +42,17 @@ export default class EsperStore extends Store {
       ? this.espers[this.selected].cpTotal(this.evolution, this.level)
       : 0;
   }
+
+  getMaxLevel = e => {
+    let i = 30;
+    switch (e) {
+      case 2:
+        i = 40;
+        break;
+      case 3:
+        i = 60;
+        break;
+    }
+    return i;
+  };
 }

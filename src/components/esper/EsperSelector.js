@@ -8,8 +8,8 @@ import { Select } from '@blueprintjs/labs';
 export default inject('esper')(
   observer(({ esper }) => {
     const onChange = item => {
-      esper.evolution = 1;
-      esper.level = 30;
+      esper.evolution = esper.espers[item].maxEvol;
+      esper.level = esper.getMaxLevel(esper.evolution);
       esper.selected = item;
     };
 

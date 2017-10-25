@@ -25,22 +25,9 @@ const StarSelector = inject('esper')(
 
 export default inject('esper')(
   observer(({ esper }) => {
-    const getMaxLevel = e => {
-      let i = 30;
-      switch (e) {
-        case 2:
-          i = 40;
-          break;
-        case 3:
-          i = 60;
-          break;
-      }
-      return i;
-    };
-
     const onEvolChange = item => {
       esper.evolution = item;
-      esper.level = getMaxLevel(item);
+      esper.level = esper.getMaxLevel(item);
     };
 
     const onLvlChange = val => {
@@ -55,7 +42,7 @@ export default inject('esper')(
         <div className="inline level">
           <NumericInput
             className="inline pt-fill"
-            max={getMaxLevel(esper.evolution)}
+            max={esper.getMaxLevel(esper.evolution)}
             min={1}
             onValueChange={onLvlChange}
             value={esper.level}
