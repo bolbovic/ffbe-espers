@@ -1,10 +1,10 @@
 import axios from 'axios';
-import { action, computed, observable, toJS } from 'mobx';
+import { action, computed, observable } from 'mobx';
 
-import DB from './DB';
 import Esper from '../common/entities/Esper';
+import Store from './Store';
 
-export default class EsperStore extends DB {
+export default class EsperStore extends Store {
   @observable abilities = {};
   @observable espers = {};
   @observable esperIds = [];
@@ -36,29 +36,6 @@ export default class EsperStore extends DB {
       .get('/data/ja.espers.magics.json')
       .then(res => (this.magics = res.data || {}));
   }
-
-  @action
-  loadEspers = snap => {
-    const data = snap.val() || {},
-      keys = Object.keys(data);
-    keys.forEach(k => {
-      if (data[k] && data[k].names) {
-        this.espers[k] = new Esper(data[k]);
-        this.espers[k].id = k;
-        this.esperIds.push(k);
-      }
-    });
-    this.db.child('GL/eboards').once('value', this.loadBoards);
-  };
-
-  @action
-  loadBoards = snap => {
-    const data = snap.val() || {},
-      keys = Object.keys(data);
-    keys.forEach(k => {
-      if (this.espers[k]) this.espers[k].board = data[k];
-    });
-  };
 
   @computed
   get availableCPS() {
