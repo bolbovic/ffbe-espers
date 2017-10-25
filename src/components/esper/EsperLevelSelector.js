@@ -1,9 +1,7 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
 
-import classNames from 'classnames';
-import { Button, Classes, NumericInput, MenuItem } from '@blueprintjs/core';
-import { Select } from '@blueprintjs/labs';
+import { Button, NumericInput } from '@blueprintjs/core';
 
 const StarSelector = inject('esper')(
   observer(({ esper, onClick }) => {

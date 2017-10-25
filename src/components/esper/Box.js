@@ -58,10 +58,17 @@ const Txt = ({ fill, fontSize = 10, text = '', x, y }) => (
     {text}
   </text>
 );
+Txt.propTypes = {
+  fill: React.PropTypes.string.isRequired,
+  fontSize: React.PropTypes.number,
+  text: React.PropTypes.string,
+  x: React.PropTypes.number.isRequired,
+  y: React.PropTypes.number.isRequired
+};
 
 export default inject('esper', 'lang')(
   observer(({ box, esper, lang, onMouseOver, onMouseOut, onClick }) => {
-    lang.lang;
+    lang.lang; // Doing this to auto load when a change of lang.
 
     const getReward = box => {
       let txt = '';

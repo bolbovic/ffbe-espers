@@ -2,12 +2,13 @@ import React from 'react';
 import { inject, observer } from 'mobx-react';
 import { action, observable } from 'mobx';
 
+/* global process */
+
 const Link = ({ file, name, region }) =>
   file[region] ? (
     <a
-      href={`http://diffs.exviusdb.com/data_files/${region}/${name}/${file[
-        region
-      ].version}/${name}.${file[region].isLocalizedText ? 'txt' : 'json'}`}
+      href={`${process.env.DB_SITE}${region}/${name}/${file[region]
+        .version}/${name}.${file[region].isLocalizedText ? 'txt' : 'json'}`}
       target="_blank"
     >
       {'here'}
@@ -15,6 +16,11 @@ const Link = ({ file, name, region }) =>
   ) : (
     <span>&nbsp;</span>
   );
+Link.propTypes = {
+  file: React.PropTypes.array.isRequired,
+  name: React.PropTypes.string.isRequired,
+  region: React.PropTypes.string.isRequired
+};
 
 const Files = inject('files')(
   observer(({ files, filter }) => (
@@ -58,10 +64,9 @@ export default class FilesView extends React.Component {
         <label className="pt-label">
           {'Filter'}
           <input
-            className="pt-input"
+            className="pt-input w200"
             onChange={this.handleChange}
             placeholder="Filter"
-            style={{ width: '200px' }}
             type="text"
             value={this.filter}
           />

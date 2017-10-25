@@ -13,16 +13,18 @@ class Routes extends React.Component {
   ];
 
   render() {
-    const routes = this.buildRoutes();
-
     return (
       <div>
         <LangSelector />
         <Router history={this.props.history}>
-          <Switch>{routes}</Switch>
+          <Switch>{this.buildRoutes()}</Switch>
         </Router>
       </div>
     );
   }
 }
+
+Routes.propTypes = {
+  history: React.PropTypes.object
+};
 export default Routes;

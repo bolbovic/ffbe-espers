@@ -1,11 +1,9 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
 
-import * as classNames from 'classnames';
+import classNames from 'classnames';
 import { Button, Classes, MenuItem } from '@blueprintjs/core';
 import { Select } from '@blueprintjs/labs';
-
-import { LANG_LIST } from '../../stores/Lang';
 
 export default inject('esper')(
   observer(({ esper }) => {
@@ -16,7 +14,7 @@ export default inject('esper')(
     };
 
     const renderItem = args => {
-      const { index, handleClick, isActive, item } = args;
+      const { handleClick, isActive, item } = args;
       const e = esper.espers[item];
 
       const classes = classNames({

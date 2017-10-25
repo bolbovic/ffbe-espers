@@ -1,7 +1,7 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
 
-import * as classNames from 'classnames';
+import classNames from 'classnames';
 import { Button, Classes, MenuItem } from '@blueprintjs/core';
 import { Select } from '@blueprintjs/labs';
 

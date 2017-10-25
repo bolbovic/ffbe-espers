@@ -11,10 +11,11 @@ import './App.css';
 
 const history = createHistory(stores.uiSt);
 
-export default () => (
+const App = () => (
   <Provider {...stores}>
     <div>
       <Routes history={history} />
     </div>
   </Provider>
 );
+export default App;

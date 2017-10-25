@@ -31,9 +31,7 @@ export default class LangStore extends Store {
     this.changeLang(defaultLang);
   }
 
-  t = (...args) => {
-    return counterpart.translate(...args);
-  };
+  t = (...args) => counterpart.translate(...args);
 
   @action
   changeLang = lang => {
