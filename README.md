@@ -10,4 +10,4 @@ Ideas to implement:
 - Example builds
 - GL version
 - Figure out translation from what is already translated
-- Saving builds?
+- ~~Saving builds?~~ Might need too much db for now.
