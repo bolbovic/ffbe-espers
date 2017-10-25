@@ -1,0 +1,19 @@
+{
+  "espers": {
+    "1": { "maxEvol": 3 },
+    "2": { "maxEvol": 3 },
+    "3": { "maxEvol": 3 },
+    "4": { "maxEvol": 3 },
+    "5": { "maxEvol": 2 },
+    "6": { "maxEvol": 3 },
+    "7": { "maxEvol": 3 },
+    "8": { "maxEvol": 3 },
+    "9": { "maxEvol": 2 },
+    "10": { "maxEvol": 2 },
+    "11": { "maxEvol": 3 },
+    "12": { "maxEvol": 2 },
+    "14": { "maxEvol": 2 },
+    "15": { "maxEvol": 1 },
+    "16": { "maxEvol": 2 }
+  }
+}

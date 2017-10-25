@@ -22,11 +22,14 @@ let D_BEAST = null;
 let D_BEAST_NAMES = null;
 let D_BEAST_CP = null;
 let D_BEAST_BOARD = null;
-let D_ABILITIES = {};
-let D_MAGICS = {};
+const D_ABILITIES = {};
+const D_MAGICS = {};
+let db = null;
 
 const region = process.argv[2] || 'global';
 const useCache = process.argv[3] !== 'false';
+
+const DB_LOCAL_FILE = `db/${region}.json`;
 
 let files = [];
 
@@ -168,6 +171,16 @@ getContent(`${DB_SITE}/${FILE_LIST}`)
 
     // Generate esper DBs
     const proms = [
+      new Promise(resolve => {
+        fs.readFile(DB_LOCAL_FILE, 'utf8', (error, data) => {
+          if (error) {
+            process.stderr.write(`dafuck can't read ${DB_LOCAL_FILE}\n`);
+            process.stderr.write(`${error}\n`);
+            process.exit(-3);
+          }
+          resolve(JSON.parse(data));
+        });
+      }).then(res => (db = res)),
       getFileContent(F_BEAST).then(res => (D_BEAST = res)),
       getFileContent(F_BEAST_BOARD).then(res => (D_BEAST_BOARD = res)),
       getFileContent(F_BEAST_CP).then(res => (D_BEAST_CP = res)),
@@ -221,14 +234,12 @@ getContent(`${DB_SITE}/${FILE_LIST}`)
         espers = {},
         magics = {};
       D_BEAST.forEach(e => {
-        espers[e.BEAST_ID] = {
-          board: {},
-          cps: {},
+        espers[e.BEAST_ID] = Object.assign(db.espers[e.BEAST_ID], {
           id: e.BEAST_ID,
           names: {
             jp: e.NAME
           }
-        };
+        });
       });
 
       if (region === 'global') {
@@ -253,7 +264,10 @@ getContent(`${DB_SITE}/${FILE_LIST}`)
           .split(',')
           .map(n => (n !== '' ? parseInt(n) : null))
           .filter(n => n !== null);
-        if (espers[id]) espers[id].cps[rarity] = cps;
+        if (espers[id]) {
+          if (!espers[id].cps) espers[id].cps = {};
+          espers[id].cps[rarity] = cps;
+        }
       });
 
       // Board
@@ -264,6 +278,7 @@ getContent(`${DB_SITE}/${FILE_LIST}`)
           pieceId = l.BEAST_PIECE_ID,
           type = getType(l.BEAST_PIECE_TYPE);
         if (espers[id]) {
+          if (!espers[id].board) espers[id].board = {};
           espers[id].board[pieceId] = {
             children: l.BEAST_PIECE_CONNECTIONS
               .split(',')
