@@ -7,7 +7,7 @@ import { action, observable } from 'mobx';
 const Link = ({ file, name, region }) =>
   file[region] ? (
     <a
-      href={`${process.env.DB_SITE}${region}/${name}/${file[region]
+      href={`${process.env.REACT_APP_DB_SITE}${region}/${name}/${file[region]
         .version}/${name}.${file[region].isLocalizedText ? 'txt' : 'json'}`}
       target="_blank"
     >

@@ -1,7 +1,7 @@
 export default [
   {
     Region: 'global',
-    FileVersion: 87,
+    FileVersion: 89,
     Filename: 'ZQqB38Ns',
     Key: 'u6q3F02d',
     IsLocalizedText: false,
@@ -9,7 +9,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 90,
+    FileVersion: 91,
     Filename: 'B7LnP2TH',
     Key: 'U0Vd7AfQ',
     IsLocalizedText: false,
@@ -41,7 +41,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 79,
+    FileVersion: 82,
     Filename: 'Fvix6V0n',
     Key: 'pR2DHS6i',
     IsLocalizedText: false,
@@ -49,7 +49,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 73,
+    FileVersion: 75,
     Filename: '1Bj4oy5Q',
     Key: '9bEA2SYP',
     IsLocalizedText: false,
@@ -57,7 +57,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 50,
+    FileVersion: 52,
     Filename: 'ZM06fUem',
     Key: '4WipzuH2',
     IsLocalizedText: false,
@@ -65,7 +65,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 44,
+    FileVersion: 46,
     Filename: 'HfRPdg65',
     Key: 'd4KR8YSq',
     IsLocalizedText: false,
@@ -81,7 +81,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 46,
+    FileVersion: 105,
     Filename: 'c5T4PIyL',
     Key: '6q3eIR9k',
     IsLocalizedText: false,
@@ -89,7 +89,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 39,
+    FileVersion: 40,
     Filename: '0EvyjKh8',
     Key: 'g2hZpVW7',
     IsLocalizedText: false,
@@ -97,7 +97,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 73,
+    FileVersion: 135,
     Filename: 'TK61DudV',
     Key: '4sPQ8aXo',
     IsLocalizedText: false,
@@ -129,7 +129,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 98,
+    FileVersion: 101,
     Filename: '24Eka6wL',
     Key: 'naJ3P84b',
     IsLocalizedText: false,
@@ -145,7 +145,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 38,
+    FileVersion: 39,
     Filename: '1r6jb9wB',
     Key: 'wL4N16V3',
     IsLocalizedText: false,
@@ -153,7 +153,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 177,
+    FileVersion: 181,
     Filename: 'A1L1GlaQ',
     Key: 'JchlFPWK',
     IsLocalizedText: false,
@@ -161,7 +161,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 39,
+    FileVersion: 40,
     Filename: 'Svq1K0rh',
     Key: 'wA4Dxp1m',
     IsLocalizedText: false,
@@ -241,7 +241,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 59,
+    FileVersion: 60,
     Filename: '60FtuAhp',
     Key: 'pjW5TI0K',
     IsLocalizedText: false,
@@ -249,7 +249,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 68,
+    FileVersion: 70,
     Filename: 'SsidX62G',
     Key: 'UW0D8ouL',
     IsLocalizedText: false,
@@ -257,7 +257,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 54,
+    FileVersion: 111,
     Filename: 'Eb5ewi87',
     Key: 't8QV2WvE',
     IsLocalizedText: false,
@@ -281,7 +281,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 37,
+    FileVersion: 38,
     Filename: '9pEnYk63',
     Key: '4sydRh79',
     IsLocalizedText: false,
@@ -289,7 +289,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 44,
+    FileVersion: 45,
     Filename: 'Da62x85q',
     Key: 'zU6L4Gng',
     IsLocalizedText: false,
@@ -297,7 +297,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 31,
+    FileVersion: 32,
     Filename: 'F2mQ87Wt',
     Key: '3CVoZu7s',
     IsLocalizedText: false,
@@ -305,7 +305,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 53,
+    FileVersion: 54,
     Filename: '9wmd4iua',
     Key: 'UREmi85S',
     IsLocalizedText: false,
@@ -313,7 +313,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 61,
+    FileVersion: 63,
     Filename: '1CUX0Qwr',
     Key: 'L3f8nko1',
     IsLocalizedText: false,
@@ -321,7 +321,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 60,
+    FileVersion: 63,
     Filename: 'S67QEJsz',
     Key: 'T1kP80NU',
     IsLocalizedText: false,
@@ -353,7 +353,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 46,
+    FileVersion: 47,
     Filename: 'yu5rvEI3',
     Key: '3t8DMRQE',
     IsLocalizedText: false,
@@ -361,7 +361,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 50,
+    FileVersion: 125,
     Filename: '7FGj2bCh',
     Key: 'B2Ka3kft',
     IsLocalizedText: false,
@@ -377,7 +377,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 47,
+    FileVersion: 48,
     Filename: 'E7YMdK3P',
     Key: 'TERM4PD7',
     IsLocalizedText: false,
@@ -385,7 +385,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 53,
+    FileVersion: 55,
     Filename: 'psuJ5VE2',
     Key: 'r6PSK8QW',
     IsLocalizedText: false,
@@ -417,7 +417,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 47,
+    FileVersion: 48,
     Filename: '27pGMZDm',
     Key: 'JveAwh98',
     IsLocalizedText: false,
@@ -521,7 +521,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 22,
+    FileVersion: 23,
     Filename: 'NCPTw2p0',
     Key: 'qP7TGZE8',
     IsLocalizedText: false,
@@ -545,7 +545,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 60,
+    FileVersion: 61,
     Filename: 'T46RpNZH',
     Key: 'AUx51pni',
     IsLocalizedText: false,
@@ -561,7 +561,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 30,
+    FileVersion: 31,
     Filename: 'bqR4p8SN',
     Key: '39mEiDNB',
     IsLocalizedText: false,
@@ -625,7 +625,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 21,
+    FileVersion: 22,
     Filename: '2Jtkc4Ar',
     Key: 'mhok0p7B',
     IsLocalizedText: false,
@@ -713,7 +713,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 72,
+    FileVersion: 75,
     Filename: 'wJE09yxD',
     Key: 'D6cJZb89',
     IsLocalizedText: false,
@@ -729,7 +729,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 57,
+    FileVersion: 59,
     Filename: 'PCm9K3no',
     Key: 'yFr6Kj3P',
     IsLocalizedText: false,
@@ -737,7 +737,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 48,
+    FileVersion: 49,
     Filename: 'B9K8ULHc',
     Key: 'p6iXmLh4',
     IsLocalizedText: false,
@@ -761,7 +761,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 54,
+    FileVersion: 56,
     Filename: 'LM1APs6u',
     Key: '8XT23CYy',
     IsLocalizedText: false,
@@ -785,7 +785,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 31,
+    FileVersion: 32,
     Filename: 'BX0pRc8A',
     Key: 'CVERk9KN',
     IsLocalizedText: false,
@@ -873,7 +873,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 135,
+    FileVersion: 139,
     Filename: 'uxMPAs4y',
     Key: 'lECkWwBw',
     IsLocalizedText: true,
@@ -881,7 +881,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 139,
+    FileVersion: 143,
     Filename: '8GJBzdQV',
     Key: 'D9UVupRQ',
     IsLocalizedText: true,
@@ -889,7 +889,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 115,
+    FileVersion: 118,
     Filename: 'eSB5Ry3E',
     Key: 'At4ghcWo',
     IsLocalizedText: true,
@@ -913,7 +913,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 90,
+    FileVersion: 93,
     Filename: '4qiOcmtJ',
     Key: 'FhWJxFlW',
     IsLocalizedText: true,
@@ -945,7 +945,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 62,
+    FileVersion: 63,
     Filename: '148O76GI',
     Key: 'pzLuYoDO',
     IsLocalizedText: true,
@@ -953,7 +953,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 64,
+    FileVersion: 66,
     Filename: 'Yjq14lAB',
     Key: 'g5SJviEC',
     IsLocalizedText: true,
@@ -961,7 +961,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 59,
+    FileVersion: 61,
     Filename: 'k51drhZ6',
     Key: 'JHJRAcEx',
     IsLocalizedText: true,
@@ -969,7 +969,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 37,
+    FileVersion: 38,
     Filename: 'JIqrNzje',
     Key: 'iizk8FjI',
     IsLocalizedText: true,
@@ -993,7 +993,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 56,
+    FileVersion: 57,
     Filename: 'mcQeT7mq',
     Key: 'tN7Gjdpv',
     IsLocalizedText: true,
@@ -1001,7 +1001,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 91,
+    FileVersion: 94,
     Filename: 'AyVqkz2B',
     Key: '0cqVvd61',
     IsLocalizedText: true,
@@ -1017,7 +1017,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 141,
+    FileVersion: 144,
     Filename: 'ZJz5QwAy',
     Key: 'Ab2Kb6yJ',
     IsLocalizedText: true,
@@ -1025,7 +1025,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 56,
+    FileVersion: 57,
     Filename: 'aJ4tvgSq',
     Key: 'iElLxksB',
     IsLocalizedText: true,
@@ -1033,7 +1033,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 54,
+    FileVersion: 55,
     Filename: 'YBqAUJt1',
     Key: 'Fc6H1Udw',
     IsLocalizedText: true,
@@ -1041,7 +1041,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 58,
+    FileVersion: 59,
     Filename: 'TIKwbf3D',
     Key: 'lx4HCdrQ',
     IsLocalizedText: true,
@@ -1049,7 +1049,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 118,
+    FileVersion: 122,
     Filename: 'CD4giPVu',
     Key: 'jqe9yQm0',
     IsLocalizedText: true,
@@ -1057,7 +1057,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 110,
+    FileVersion: 113,
     Filename: 'E0NdslwL',
     Key: 'SGMI0nIq',
     IsLocalizedText: true,
@@ -1065,7 +1065,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 110,
+    FileVersion: 113,
     Filename: 'Nao9HYWk',
     Key: 'I0l1uc2s',
     IsLocalizedText: true,
@@ -1073,7 +1073,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 104,
+    FileVersion: 107,
     Filename: '9NCIDltW',
     Key: 's3fVSywt',
     IsLocalizedText: true,
@@ -1081,7 +1081,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 89,
+    FileVersion: 92,
     Filename: 'IAPS1jOu',
     Key: 'TZh30bbo',
     IsLocalizedText: true,
@@ -1089,7 +1089,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 90,
+    FileVersion: 92,
     Filename: 'VhkhtvDn',
     Key: 'xDkegMbe',
     IsLocalizedText: true,
@@ -1097,7 +1097,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 94,
+    FileVersion: 97,
     Filename: 'yUkwbFyc',
     Key: 'R6mBb3T3',
     IsLocalizedText: true,
@@ -1113,7 +1113,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 94,
+    FileVersion: 95,
     Filename: 'EUsG7rlQ',
     Key: 'ZcXYp8BI',
     IsLocalizedText: true,
@@ -1121,7 +1121,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 84,
+    FileVersion: 85,
     Filename: 'XBS8hLZD',
     Key: 'zswbSb5U',
     IsLocalizedText: true,
@@ -1129,7 +1129,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 85,
+    FileVersion: 87,
     Filename: 'Jcavjyxo',
     Key: 'ZFHehCN4',
     IsLocalizedText: true,
@@ -1137,7 +1137,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 88,
+    FileVersion: 89,
     Filename: 'Hs9KVVnj',
     Key: 'raokY9Xl',
     IsLocalizedText: true,
@@ -1145,7 +1145,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 70,
+    FileVersion: 71,
     Filename: '1ZqISaBp',
     Key: '9TAwFj0e',
     IsLocalizedText: true,
@@ -1153,7 +1153,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 36,
+    FileVersion: 37,
     Filename: '15KaBQci',
     Key: 'U56G5oiU',
     IsLocalizedText: true,
@@ -1161,7 +1161,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 107,
+    FileVersion: 109,
     Filename: 'QEbXmDTD',
     Key: '3ZaDmbq1',
     IsLocalizedText: true,
@@ -1169,7 +1169,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 108,
+    FileVersion: 110,
     Filename: '8g18k8jD',
     Key: 'DvdwoXYQ',
     IsLocalizedText: true,
@@ -1177,7 +1177,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 88,
+    FileVersion: 91,
     Filename: '2Eg5s20D',
     Key: 'E5jbLGyb',
     IsLocalizedText: true,
@@ -1185,7 +1185,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 109,
+    FileVersion: 112,
     Filename: 'pa6vblsG',
     Key: 'GdAhtrNB',
     IsLocalizedText: true,
@@ -1193,7 +1193,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 98,
+    FileVersion: 100,
     Filename: 'F1VQsGpG',
     Key: 'uEOGF11w',
     IsLocalizedText: true,
@@ -1201,7 +1201,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 99,
+    FileVersion: 102,
     Filename: 'xe6RH45K',
     Key: 'p9l4ys4L',
     IsLocalizedText: true,
@@ -1209,7 +1209,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 87,
+    FileVersion: 89,
     Filename: 'zf7USTwU',
     Key: 'OJir9FR5',
     IsLocalizedText: true,
@@ -1217,7 +1217,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 105,
+    FileVersion: 109,
     Filename: '0xkPiwVI',
     Key: 'UOz3hI2k',
     IsLocalizedText: true,
@@ -1225,7 +1225,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 76,
+    FileVersion: 78,
     Filename: 'P4c5fq2t',
     Key: 'XhCacZZv',
     IsLocalizedText: true,
@@ -1233,7 +1233,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 101,
+    FileVersion: 103,
     Filename: 'F1z92dkt',
     Key: 'B41kLp2C',
     IsLocalizedText: true,
@@ -1249,7 +1249,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 82,
+    FileVersion: 83,
     Filename: 'A55coosK',
     Key: 'xQj2cuc8',
     IsLocalizedText: true,
@@ -1265,7 +1265,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 67,
+    FileVersion: 68,
     Filename: 'NMwfx1lf',
     Key: 'KVBowHC2',
     IsLocalizedText: true,
@@ -1273,7 +1273,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 82,
+    FileVersion: 83,
     Filename: 'vb5Nom5d',
     Key: 'sCFyRxng',
     IsLocalizedText: true,
@@ -1281,7 +1281,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 69,
+    FileVersion: 70,
     Filename: 'uuU68I2u',
     Key: 'cnW2w71S',
     IsLocalizedText: true,
@@ -1289,7 +1289,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 82,
+    FileVersion: 83,
     Filename: 'fULaqIeB',
     Key: 'CueuZNTN',
     IsLocalizedText: true,
@@ -1297,7 +1297,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 45,
+    FileVersion: 47,
     Filename: 'Cw3B65ql',
     Key: 'W4rz5Sas',
     IsLocalizedText: true,
@@ -1305,7 +1305,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 85,
+    FileVersion: 86,
     Filename: 'tFnHkR8G',
     Key: 'lEWsm9iI',
     IsLocalizedText: true,
@@ -1321,7 +1321,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 42,
+    FileVersion: 43,
     Filename: 'NYz5Oxm4',
     Key: 'yBd5wOHp',
     IsLocalizedText: true,
@@ -1337,7 +1337,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 70,
+    FileVersion: 71,
     Filename: 'hiiVWxXJ',
     Key: 'ucOQs1YO',
     IsLocalizedText: true,
@@ -1345,7 +1345,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 68,
+    FileVersion: 69,
     Filename: 'ca5XNnWD',
     Key: 'WfvQbAKG',
     IsLocalizedText: true,
@@ -1353,7 +1353,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 198,
+    FileVersion: 201,
     Filename: '0ThfQQWd',
     Key: 's9E34w78',
     IsLocalizedText: true,
@@ -1369,7 +1369,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 64,
+    FileVersion: 65,
     Filename: 'KLoYS0Tj',
     Key: '0BZOtiRB',
     IsLocalizedText: true,
@@ -1377,7 +1377,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 62,
+    FileVersion: 63,
     Filename: 'N12vEZpN',
     Key: '11yq2cUt',
     IsLocalizedText: true,
@@ -1385,7 +1385,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 67,
+    FileVersion: 70,
     Filename: 'h23JuUGF',
     Key: 'Jovaw62m',
     IsLocalizedText: true,
@@ -1393,7 +1393,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 84,
+    FileVersion: 86,
     Filename: 'SZXTrTgq',
     Key: 'oVpBUtX2',
     IsLocalizedText: true,
@@ -1401,7 +1401,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 35,
+    FileVersion: 36,
     Filename: 'KFL34pbm',
     Key: 'Q9HMWNZG',
     IsLocalizedText: true,
@@ -1433,7 +1433,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 89,
+    FileVersion: 92,
     Filename: 'sZE3Lhgj',
     Key: '3IfWAnJ3',
     IsLocalizedText: true,
@@ -1441,7 +1441,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 94,
+    FileVersion: 97,
     Filename: 'Zfw0jmyn',
     Key: 'xCppLKwD',
     IsLocalizedText: true,
@@ -1449,7 +1449,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 107,
+    FileVersion: 110,
     Filename: 'w6U2ntyZ',
     Key: 'VNh3r92R',
     IsLocalizedText: true,
@@ -1457,7 +1457,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 102,
+    FileVersion: 105,
     Filename: '7tfppWVS',
     Key: 'OYQn68Hu',
     IsLocalizedText: true,
@@ -1465,7 +1465,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 99,
+    FileVersion: 102,
     Filename: 'TpbDECdR',
     Key: 'v47OlIK4',
     IsLocalizedText: true,
@@ -1473,7 +1473,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 96,
+    FileVersion: 99,
     Filename: 'hWE8dJMC',
     Key: 'GInxSlTN',
     IsLocalizedText: true,
@@ -1489,7 +1489,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 104,
+    FileVersion: 106,
     Filename: 'ZQqB38Ns',
     Key: 'u6q3F02d',
     IsLocalizedText: false,
@@ -1497,7 +1497,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 209,
+    FileVersion: 215,
     Filename: 'B7LnP2TH',
     Key: 'U0Vd7AfQ',
     IsLocalizedText: false,
@@ -1505,7 +1505,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 56,
+    FileVersion: 78,
     Filename: 'zg5P1AxM',
     Key: 'Zib6m5ed',
     IsLocalizedText: false,
@@ -1529,7 +1529,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 236,
+    FileVersion: 240,
     Filename: 'Fvix6V0n',
     Key: 'pR2DHS6i',
     IsLocalizedText: false,
@@ -1537,7 +1537,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 273,
+    FileVersion: 279,
     Filename: '1Bj4oy5Q',
     Key: '9bEA2SYP',
     IsLocalizedText: false,
@@ -1545,7 +1545,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 168,
+    FileVersion: 172,
     Filename: 'ZM06fUem',
     Key: '4WipzuH2',
     IsLocalizedText: false,
@@ -1553,7 +1553,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 147,
+    FileVersion: 151,
     Filename: 'HfRPdg65',
     Key: 'd4KR8YSq',
     IsLocalizedText: false,
@@ -1569,7 +1569,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 159,
+    FileVersion: 165,
     Filename: 'c5T4PIyL',
     Key: '6q3eIR9k',
     IsLocalizedText: false,
@@ -1577,7 +1577,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 142,
+    FileVersion: 146,
     Filename: '0EvyjKh8',
     Key: 'g2hZpVW7',
     IsLocalizedText: false,
@@ -1585,7 +1585,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 380,
+    FileVersion: 395,
     Filename: 'TK61DudV',
     Key: '4sPQ8aXo',
     IsLocalizedText: false,
@@ -1593,7 +1593,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 77,
+    FileVersion: 81,
     Filename: '6J8jwSDW',
     Key: '2zyP4WQY',
     IsLocalizedText: false,
@@ -1617,7 +1617,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 320,
+    FileVersion: 326,
     Filename: '24Eka6wL',
     Key: 'naJ3P84b',
     IsLocalizedText: false,
@@ -1633,7 +1633,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 180,
+    FileVersion: 189,
     Filename: '1r6jb9wB',
     Key: 'wL4N16V3',
     IsLocalizedText: false,
@@ -1641,7 +1641,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 188,
+    FileVersion: 195,
     Filename: 'Svq1K0rh',
     Key: 'wA4Dxp1m',
     IsLocalizedText: false,
@@ -1665,7 +1665,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 84,
+    FileVersion: 88,
     Filename: '6P9XZ7ts',
     Key: 'IavY38oB',
     IsLocalizedText: false,
@@ -1673,7 +1673,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 85,
+    FileVersion: 89,
     Filename: 'v34C8PdG',
     Key: 'Si9bxe86',
     IsLocalizedText: false,
@@ -1681,7 +1681,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 87,
+    FileVersion: 91,
     Filename: '03cY9vXe',
     Key: 'd60DCUMp',
     IsLocalizedText: false,
@@ -1689,7 +1689,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 84,
+    FileVersion: 88,
     Filename: 'ASh8IH0b',
     Key: '1L7oneM4',
     IsLocalizedText: false,
@@ -1697,7 +1697,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 81,
+    FileVersion: 83,
     Filename: '2qDEnLF9',
     Key: '7FmTj0hp',
     IsLocalizedText: false,
@@ -1721,7 +1721,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 139,
+    FileVersion: 144,
     Filename: '60FtuAhp',
     Key: 'pjW5TI0K',
     IsLocalizedText: false,
@@ -1729,7 +1729,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 186,
+    FileVersion: 194,
     Filename: 'SsidX62G',
     Key: 'UW0D8ouL',
     IsLocalizedText: false,
@@ -1737,7 +1737,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 160,
+    FileVersion: 166,
     Filename: 'Eb5ewi87',
     Key: 't8QV2WvE',
     IsLocalizedText: false,
@@ -1745,7 +1745,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 20,
+    FileVersion: 24,
     Filename: 'kMnY10ry',
     Key: 'B38YWDtF',
     IsLocalizedText: false,
@@ -1753,7 +1753,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 20,
+    FileVersion: 23,
     Filename: 'i3YrEM1t',
     Key: '6cUguh10',
     IsLocalizedText: false,
@@ -1761,7 +1761,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 139,
+    FileVersion: 143,
     Filename: '9pEnYk63',
     Key: '4sydRh79',
     IsLocalizedText: false,
@@ -1769,7 +1769,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 161,
+    FileVersion: 167,
     Filename: 'Da62x85q',
     Key: 'zU6L4Gng',
     IsLocalizedText: false,
@@ -1777,7 +1777,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 103,
+    FileVersion: 106,
     Filename: 'F2mQ87Wt',
     Key: '3CVoZu7s',
     IsLocalizedText: false,
@@ -1785,7 +1785,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 66,
+    FileVersion: 69,
     Filename: '9wmd4iua',
     Key: 'UREmi85S',
     IsLocalizedText: false,
@@ -1793,7 +1793,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 134,
+    FileVersion: 138,
     Filename: '1CUX0Qwr',
     Key: 'L3f8nko1',
     IsLocalizedText: false,
@@ -1801,7 +1801,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 197,
+    FileVersion: 205,
     Filename: 'S67QEJsz',
     Key: 'T1kP80NU',
     IsLocalizedText: false,
@@ -1809,7 +1809,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 169,
+    FileVersion: 173,
     Filename: 'Af46DrVW',
     Key: '4MbdRZI6',
     IsLocalizedText: false,
@@ -1817,7 +1817,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 33,
+    FileVersion: 37,
     Filename: 'vdeSoq61',
     Key: 'tnNGLk45',
     IsLocalizedText: false,
@@ -1841,7 +1841,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 279,
+    FileVersion: 290,
     Filename: '7FGj2bCh',
     Key: 'B2Ka3kft',
     IsLocalizedText: false,
@@ -1849,7 +1849,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 75,
+    FileVersion: 79,
     Filename: '8qbVQUx5',
     Key: '8LE2hk3r',
     IsLocalizedText: false,
@@ -1857,7 +1857,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 132,
+    FileVersion: 136,
     Filename: 'E7YMdK3P',
     Key: 'TERM4PD7',
     IsLocalizedText: false,
@@ -1865,7 +1865,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 158,
+    FileVersion: 166,
     Filename: 'psuJ5VE2',
     Key: 'r6PSK8QW',
     IsLocalizedText: false,
@@ -1873,7 +1873,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 166,
+    FileVersion: 170,
     Filename: 'bW2GHT1N',
     Key: '7mof2RVP',
     IsLocalizedText: false,
@@ -1881,7 +1881,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 33,
+    FileVersion: 37,
     Filename: 'Nny6xD90',
     Key: '89fcSX4v',
     IsLocalizedText: false,
@@ -1921,7 +1921,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 48,
+    FileVersion: 50,
     Filename: 'E9z2e4UZ',
     Key: 'XvkVU34H',
     IsLocalizedText: false,
@@ -1929,7 +1929,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 45,
+    FileVersion: 47,
     Filename: 'zE1hx53P',
     Key: 'Y4Fds1Jr',
     IsLocalizedText: false,
@@ -1937,7 +1937,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 43,
+    FileVersion: 45,
     Filename: 'tWp7f5Ma',
     Key: 'XuWn97Hf',
     IsLocalizedText: false,
@@ -1961,7 +1961,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 40,
+    FileVersion: 42,
     Filename: 'dzA5MC6f',
     Key: 'Syax34vR',
     IsLocalizedText: false,
@@ -1985,7 +1985,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 23,
+    FileVersion: 26,
     Filename: '1ks9q4Pj',
     Key: 'X0FA6Ewh',
     IsLocalizedText: false,
@@ -2001,7 +2001,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 32,
+    FileVersion: 35,
     Filename: 'NCPTw2p0',
     Key: 'qP7TGZE8',
     IsLocalizedText: false,
@@ -2025,7 +2025,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 255,
+    FileVersion: 261,
     Filename: 'T46RpNZH',
     Key: 'AUx51pni',
     IsLocalizedText: false,
@@ -2041,7 +2041,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 114,
+    FileVersion: 118,
     Filename: 'bqR4p8SN',
     Key: '39mEiDNB',
     IsLocalizedText: false,
@@ -2049,7 +2049,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 103,
+    FileVersion: 105,
     Filename: 'JS1Yuw4I',
     Key: '5twrCFz1',
     IsLocalizedText: false,
@@ -2057,7 +2057,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 113,
+    FileVersion: 115,
     Filename: '3h5KWXLz',
     Key: 'bQ45mFoC',
     IsLocalizedText: false,
@@ -2113,7 +2113,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 93,
+    FileVersion: 95,
     Filename: 'PSDIR8b1',
     Key: 'SDV4mZL0',
     IsLocalizedText: false,
@@ -2153,7 +2153,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 21,
+    FileVersion: 26,
     Filename: '6wibj9m8',
     Key: 'sy6GRuY2',
     IsLocalizedText: false,
@@ -2193,7 +2193,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 245,
+    FileVersion: 254,
     Filename: 'wJE09yxD',
     Key: 'D6cJZb89',
     IsLocalizedText: false,
@@ -2209,7 +2209,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 207,
+    FileVersion: 214,
     Filename: 'PCm9K3no',
     Key: 'yFr6Kj3P',
     IsLocalizedText: false,
@@ -2217,7 +2217,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 180,
+    FileVersion: 189,
     Filename: 'B9K8ULHc',
     Key: 'p6iXmLh4',
     IsLocalizedText: false,
@@ -2225,7 +2225,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 78,
+    FileVersion: 80,
     Filename: 'YW9MUm2H',
     Key: 'LyjM2nU9',
     IsLocalizedText: false,
@@ -2233,7 +2233,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 305,
+    FileVersion: 327,
     Filename: 'oB0YVw67',
     Key: 'C6ci5pfG',
     IsLocalizedText: false,
@@ -2241,7 +2241,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 205,
+    FileVersion: 213,
     Filename: 'LM1APs6u',
     Key: '8XT23CYy',
     IsLocalizedText: false,
@@ -2313,7 +2313,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 87,
+    FileVersion: 89,
     Filename: '91vNbdxg',
     Key: '1YAk2fcr',
     IsLocalizedText: false,
@@ -2321,7 +2321,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 154,
+    FileVersion: 160,
     Filename: 'uw07SXpU',
     Key: '48HhnaKP',
     IsLocalizedText: false,
@@ -2345,7 +2345,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 30,
+    FileVersion: 31,
     Filename: 'i7STtbw8',
     Key: 'o28ckLUb',
     IsLocalizedText: false,
@@ -2353,7 +2353,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 25,
+    FileVersion: 27,
     Filename: '95KFiNTM',
     Key: '0sDdWku8',
     IsLocalizedText: false,
@@ -2401,7 +2401,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 11,
+    FileVersion: 238,
     Filename: '65fHqgnT',
     Key: 'w1A9S5sr',
     IsLocalizedText: false,
@@ -2417,7 +2417,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 228,
+    FileVersion: 232,
     Filename: 'GL9t6cMF',
     Key: '8Dx2QUZS',
     IsLocalizedText: false,
@@ -2425,7 +2425,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 32,
+    FileVersion: 37,
     Filename: 'GL9t6cMF',
     Key: '8Dx2QUZS',
     IsLocalizedText: false,
@@ -2433,7 +2433,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 136,
+    FileVersion: 140,
     Filename: 'UHk7x2V8',
     Key: 'Q83j0GvZ',
     IsLocalizedText: false,
@@ -2441,7 +2441,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 22,
+    FileVersion: 36,
     Filename: 'UHk7x2V8',
     Key: 'Q83j0GvZ',
     IsLocalizedText: false,
@@ -2513,7 +2513,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 62,
+    FileVersion: 64,
     Filename: '8tR1K79p',
     Key: '2nJN19qh',
     IsLocalizedText: false,
@@ -2521,7 +2521,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 9,
+    FileVersion: 10,
     Filename: '8tR1K79p',
     Key: '2nJN19qh',
     IsLocalizedText: false,
@@ -2529,7 +2529,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 53,
+    FileVersion: 55,
     Filename: '0Nc4PkAJ',
     Key: 'm7XJdkp1',
     IsLocalizedText: false,
@@ -2545,7 +2545,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 69,
+    FileVersion: 71,
     Filename: 'gd74jWQn',
     Key: 'gY7NiJL8',
     IsLocalizedText: false,
@@ -2553,7 +2553,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 33,
+    FileVersion: 113,
     Filename: 'gd74jWQn',
     Key: 'gY7NiJL8',
     IsLocalizedText: false,
@@ -2561,7 +2561,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 57,
+    FileVersion: 59,
     Filename: 'cg5k2Mxn',
     Key: 'KNWf37Bm',
     IsLocalizedText: false,
@@ -2569,7 +2569,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 13,
+    FileVersion: 14,
     Filename: 'cg5k2Mxn',
     Key: 'KNWf37Bm',
     IsLocalizedText: false,
@@ -2609,7 +2609,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 84,
+    FileVersion: 88,
     Filename: 'VMIe9c6U',
     Key: 'Na71Z6kg',
     IsLocalizedText: false,
@@ -2625,7 +2625,7 @@ export default [
   },
   {
     Region: 'ja',
-    FileVersion: 84,
+    FileVersion: 88,
     Filename: 'I0SUr3WY',
     Key: 'XY2MA1x3',
     IsLocalizedText: false,
@@ -2665,7 +2665,7 @@ export default [
   },
   {
     Region: 'global',
-    FileVersion: 13,
+    FileVersion: 14,
     Filename: 'M9K0SJgR',
     Key: 'vnkfer76',
     IsLocalizedText: false,

@@ -4,7 +4,7 @@ require('dotenv').config();
 const axios = require('axios');
 const fs = require('fs');
 
-const DB_SITE = process.env.DB_SITE;
+const DB_SITE = process.env.REACT_APP_DB_SITE;
 const DB_REP = './public/data';
 const FILE_LIST = 'file_list.json';
 
