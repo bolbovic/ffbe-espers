@@ -11,7 +11,7 @@ export default inject('esper')(
       esper.changeBoard(
         item,
         esper.espers[item].maxEvol,
-        esper.getMaxLevel(esper.evolution)
+        esper.getMaxLevel(esper.espers[item].maxEvol)
       );
     };
 
