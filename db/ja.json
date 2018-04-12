@@ -9,11 +9,13 @@
     "7": { "maxEvol": 3 },
     "8": { "maxEvol": 3 },
     "9": { "maxEvol": 3 },
-    "10": { "maxEvol": 2 },
+    "10": { "maxEvol": 3 },
     "11": { "maxEvol": 3 },
-    "12": { "maxEvol": 2 },
-    "14": { "maxEvol": 2 },
+    "12": { "maxEvol": 3 },
+    "13": { "maxEvol": 2 },
+    "14": { "maxEvol": 3 },
     "15": { "maxEvol": 1 },
-    "16": { "maxEvol": 2 }
+    "16": { "maxEvol": 3 },
+    "17": { "maxEvol": 2 }
   }
 }
