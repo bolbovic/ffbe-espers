@@ -234,12 +234,14 @@ getContent(`${DB_SITE}/${FILE_LIST}`)
         espers = {},
         magics = {};
       D_BEAST.forEach(e => {
-        espers[e.BEAST_ID] = Object.assign(db.espers[e.BEAST_ID], {
-          id: e.BEAST_ID,
-          names: {
-            jp: e.NAME
-          }
-        });
+        if (db.espers[e.BEAST_ID]) {
+          espers[e.BEAST_ID] = Object.assign(db.espers[e.BEAST_ID], {
+            id: e.BEAST_ID,
+            names: {
+              jp: e.NAME
+            }
+          });
+        }
       });
 
       if (region === 'global') {
