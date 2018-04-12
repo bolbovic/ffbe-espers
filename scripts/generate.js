@@ -237,6 +237,7 @@ getContent(`${DB_SITE}/${FILE_LIST}`)
         if (db.espers[e.BEAST_ID]) {
           espers[e.BEAST_ID] = Object.assign(db.espers[e.BEAST_ID], {
             id: e.BEAST_ID,
+            order: parseInt(e.DICTIONARY_INDEX, 10),
             names: {
               jp: e.NAME
             }

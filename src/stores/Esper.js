@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { action, computed, observable, reaction } from 'mobx';
+import sortby from 'lodash.sortby';
 import uniq from 'lodash.uniq';
 
 import Esper from '../common/entities/Esper';
@@ -28,7 +29,6 @@ export default class EsperStore extends Store {
             const data = r.data;
             if (data && data.names) {
               this.espers[esper.id] = new Esper(data);
-              this.esperIds.push(esper.id);
             }
           })
         );
@@ -44,6 +44,7 @@ export default class EsperStore extends Store {
           .then(res => (this.magics = res.data || {}))
       );
       Promise.all(proms).then(() => {
+        this.esperIds = sortby(res.data, ['order']).map(e => e.id);
         this.loaded = true;
       });
     });
