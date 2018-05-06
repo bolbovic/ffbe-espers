@@ -157,15 +157,15 @@ const getType = type => {
 };
 
 const saveInDb = (name, data) => {
-  process.stdin.write(`Writting ${name}...`);
+  process.stdout.write(`Writting ${name}...`);
   fs.writeFileSync(`${DB_REP}/${region}.${name}.json`, JSON.stringify(data));
-  process.stdin.write('OK\n');
+  process.stdout.write('OK\n');
 };
 
-process.stdin.write('Getting file list...');
+process.stdout.write('Getting file list...');
 getContent(`${DB_SITE}/${FILE_LIST}`)
   .then(res => {
-    process.stdin.write('OK\n');
+    process.stdout.write('OK\n');
 
     files = res;
 
@@ -226,9 +226,9 @@ getContent(`${DB_SITE}/${FILE_LIST}`)
       );
     }
 
-    process.stdin.write('Getting needed files for espers...');
+    process.stdout.write('Getting needed files for espers...');
     Promise.all(proms).then(() => {
-      process.stdin.write('OK\n');
+      process.stdout.write('OK\n');
 
       const abilities = {},
         espers = {},
@@ -319,7 +319,7 @@ getContent(`${DB_SITE}/${FILE_LIST}`)
       Object.keys(espers).forEach(k => {
         saveInDb(`esper.${espers[k].id}`, espers[k]);
       });
-      process.stdin.write('Done!\n');
+      process.stdout.write('Done!\n');
     });
   })
   .catch(err => {
